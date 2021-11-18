@@ -31,12 +31,12 @@ class _HomePageState extends State<HomePage> {
   String dropdownValue = 'português (Brasil)';
   final nameController = TextEditingController();
   final passController = TextEditingController();
-  
+
   bool? isCompleted;
 
   void _nameChanged(String text) {
     setState(() {
-       if(text.isNotEmpty) {
+      if (text.isNotEmpty) {
         isCompleted = true;
       } else {
         isCompleted = false;
@@ -46,8 +46,8 @@ class _HomePageState extends State<HomePage> {
 
   void _passChanged(String text) {
     setState(() {
-      if(text.isNotEmpty) {
-       isCompleted = true;
+      if (text.isNotEmpty) {
+        isCompleted = true;
       } else {
         isCompleted = false;
       }
@@ -101,107 +101,119 @@ class _HomePageState extends State<HomePage> {
             ),
             const Divider(height: 25.0),
             Padding(
-                    padding: EdgeInsets.only(top: 0),
-                    child: Container(
-                      height: 50,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5.0),
-                          border: Border.all(
-                            width: 0.5,
-                            color: Colors.grey,
-                          ),
-                          color: Colors.grey[100]),
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 10),
-                        child: TextFormField(
-                          controller: nameController,
-                          onChanged: _nameChanged,
-                          obscureText: false,
-                          decoration: const InputDecoration(
-                            focusedBorder: InputBorder.none,
-                            enabledBorder: InputBorder.none,
-                            errorBorder: InputBorder.none,
-                            disabledBorder: InputBorder.none,
-                            hintText:
-                                'Número de telefone, email ou nome de usuario',
-                          ),
-                        ),
-                      ),
+              padding: EdgeInsets.only(top: 0),
+              child: Container(
+                height: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5.0),
+                    border: Border.all(
+                      width: 0.5,
+                      color: Colors.grey,
+                    ),
+                    color: Colors.grey[100]),
+                child: Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: TextFormField(
+                    controller: nameController,
+                    onChanged: _nameChanged,
+                    obscureText: false,
+                    decoration: const InputDecoration(
+                      focusedBorder: InputBorder.none,
+                      enabledBorder: InputBorder.none,
+                      errorBorder: InputBorder.none,
+                      disabledBorder: InputBorder.none,
+                      hintText: 'Número de telefone, email ou nome de usuario',
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 30),
-                    child: Container(
-                      height: 50,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5.0),
-                          border: Border.all(
-                            width: 0.5,
-                            color: Colors.grey,
-                          ),
-                          color: Colors.grey[100]),
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 10),
-                        child: TextFormField(
-                          controller: passController,
-                          onChanged: _passChanged,
-                          obscureText: true,
-                          decoration: const InputDecoration(
-                            focusedBorder: InputBorder.none,
-                            enabledBorder: InputBorder.none,
-                            errorBorder: InputBorder.none,
-                            disabledBorder: InputBorder.none,
-                            hintText: 'Senha',
-                            suffixIcon: Icon(Icons.remove_red_eye_outlined),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 25.0, bottom: 25.0),
-                    child: Container(
-                      height: 50.0,
-                      decoration: BoxDecoration(
-                        border: Border.all(width: isCompleted == true ? 1 : 0, color: Colors.grey),
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(isCompleted == true ? Colors.blue : Colors.blue.shade100),
-                        ),
-                        child: Text(
-                          "Entrar",
-                          style:
-                              TextStyle(color: isCompleted == true ? Colors.white : Colors.white54, fontSize: 20.0),
-                        ),
-                      ),
-                    ),
-                  ),
-            Padding(padding: EdgeInsets.only(bottom: 25.0), child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Flexible(child: RichText(
-              text: TextSpan(
-                style: TextStyle(color: Colors.grey, fontSize: 14.0),
-                children: <TextSpan>[
-                  TextSpan(text: 'Esqueceu seus dados de login?'),
-                  TextSpan(
-                      text: ' Obtenha ajuda para entrar.',
-                      style: TextStyle(
-                        color: Colors.blue[700],
-                        fontWeight: FontWeight.w700,
-                      ),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {
-                          print('CLICOU');
-                        }),
-                ],
+                ),
               ),
-            ),),
-              ],
-            )),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 30),
+              child: Container(
+                height: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5.0),
+                    border: Border.all(
+                      width: 0.5,
+                      color: Colors.grey,
+                    ),
+                    color: Colors.grey[100]),
+                child: Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: TextFormField(
+                    controller: passController,
+                    onChanged: _passChanged,
+                    obscureText: true,
+                    decoration: const InputDecoration(
+                      focusedBorder: InputBorder.none,
+                      enabledBorder: InputBorder.none,
+                      errorBorder: InputBorder.none,
+                      disabledBorder: InputBorder.none,
+                      hintText: 'Senha',
+                      suffixIcon: Icon(Icons.remove_red_eye_outlined),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 25.0, bottom: 25.0),
+              child: Container(
+                height: 50.0,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                      width: isCompleted == true ? 1 : 0, color: Colors.grey),
+                  borderRadius: BorderRadius.circular(5.0),
+                ),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => HomePage()));
+                  },
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        isCompleted == true
+                            ? Colors.blue
+                            : Colors.blue.shade100),
+                  ),
+                  child: Text(
+                    "Entrar",
+                    style: TextStyle(
+                        color:
+                            isCompleted == true ? Colors.white : Colors.white54,
+                        fontSize: 20.0),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+                padding: EdgeInsets.only(bottom: 25.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Flexible(
+                      child: RichText(
+                        text: TextSpan(
+                          style: TextStyle(color: Colors.grey, fontSize: 14.0),
+                          children: <TextSpan>[
+                            TextSpan(text: 'Esqueceu seus dados de login?'),
+                            TextSpan(
+                                text: ' Obtenha ajuda para entrar.',
+                                style: TextStyle(
+                                  color: Colors.blue[700],
+                                  fontWeight: FontWeight.w700,
+                                ),
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    print('CLICOU');
+                                  }),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                )),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -213,7 +225,9 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.grey,
                   ),
                 ),
-                Text('OU', style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w700)),
+                Text('OU',
+                    style: TextStyle(
+                        color: Colors.grey, fontWeight: FontWeight.w700)),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: Container(
@@ -251,7 +265,6 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-
 class _DemoBottomAppBar extends StatelessWidget {
   const _DemoBottomAppBar({
     this.fabLocation = FloatingActionButtonLocation.endDocked,
@@ -275,29 +288,32 @@ class _DemoBottomAppBar extends StatelessWidget {
       elevation: 0,
       child: IconTheme(
         data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
-        child: Padding(padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0), child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            RichText(
-              text: TextSpan(
-                style: TextStyle(color: Colors.grey, fontSize: 16.0),
-                children: <TextSpan>[
-                  TextSpan(text: 'Não tem uma conta?'),
-                  TextSpan(
-                      text: ' Cadastre-se.',
-                      style: TextStyle(
-                        color: Colors.blue[700],
-                        fontWeight: FontWeight.w700,
-                      ),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {
-                          print('CLICOU');
-                        }),
-                ],
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              RichText(
+                text: TextSpan(
+                  style: TextStyle(color: Colors.grey, fontSize: 16.0),
+                  children: <TextSpan>[
+                    TextSpan(text: 'Não tem uma conta?'),
+                    TextSpan(
+                        text: ' Cadastre-se.',
+                        style: TextStyle(
+                          color: Colors.blue[700],
+                          fontWeight: FontWeight.w700,
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            print('CLICOU');
+                          }),
+                  ],
+                ),
               ),
-            ),
-          ],
-        ),),
+            ],
+          ),
+        ),
       ),
     );
   }
