@@ -29,21 +29,46 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String dropdownValue = 'português (Brasil)';
+  final nameController = TextEditingController();
+  final passController = TextEditingController();
+  
+  bool? isCompleted;
+
+  void _nameChanged(String text) {
+    setState(() {
+       if(text.isNotEmpty) {
+        isCompleted = true;
+      } else {
+        isCompleted = false;
+      }
+    });
+  }
+
+  void _passChanged(String text) {
+    setState(() {
+      if(text.isNotEmpty) {
+       isCompleted = true;
+      } else {
+        isCompleted = false;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.white,
         title: DropdownButton<String>(
           value: dropdownValue,
-          icon: const Icon(Icons.keyboard_arrow_down, color: Colors.blueGrey),
+          icon: const Icon(Icons.keyboard_arrow_down, color: Colors.grey),
           iconSize: 24,
           elevation: 14,
-          style: const TextStyle(color: Colors.blueGrey),
+          style: const TextStyle(color: Colors.grey),
           onChanged: (String? newValue) {
             setState(() {
               dropdownValue = newValue!;
@@ -75,57 +100,85 @@ class _HomePageState extends State<HomePage> {
               height: 70.0,
             ),
             const Divider(height: 25.0),
-            Container(
-              height: 40.0,
-              child: TextFormField(
-              keyboardType: TextInputType.emailAddress,
-              decoration: const InputDecoration(
-                hintText: 'Número de telefone, email ou nome de usuário',
-              ),
-              validator: (String? value) {
-                if (value == null || value.isEmpty) {
-                  return 'Por favor, digite uma das opções para fazer login!';
-                }
-                return null;
-              },
-            ),
-            ),
-            const Divider(height: 25.0),
-            Container(
-              height: 40.0,
-              child: TextFormField(
-              obscureText: true,
-              decoration: const InputDecoration(
-                filled: true,
-                fillColor: Colors.grey,
-                hintText: 'Senha',
-                suffixIcon: Icon(Icons.remove_red_eye_outlined),
-              ),
-              validator: (String? value) {
-                if (value == null || value.isEmpty) {
-                  return 'Por favor, digite sua senha para entrar!';
-                }
-                return null;
-              },
-            ),
-            ),
             Padding(
-              padding: EdgeInsets.only(top: 25.0, bottom: 25.0),
-              child: Container(
-                height: 50.0,
-                child: RaisedButton(
-                  onPressed: () {},
-                  shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(6.0),
+                    padding: EdgeInsets.only(top: 0),
+                    child: Container(
+                      height: 50,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5.0),
+                          border: Border.all(
+                            width: 0.5,
+                            color: Colors.grey,
+                          ),
+                          color: Colors.grey[100]),
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 10),
+                        child: TextFormField(
+                          controller: nameController,
+                          onChanged: _nameChanged,
+                          obscureText: false,
+                          decoration: const InputDecoration(
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
+                            disabledBorder: InputBorder.none,
+                            hintText:
+                                'Número de telefone, email ou nome de usuario',
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
-                  child: Text(
-                    "Entrar",
-                    style: TextStyle(color: Colors.white, fontSize: 20.0),
+                  Padding(
+                    padding: EdgeInsets.only(top: 30),
+                    child: Container(
+                      height: 50,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5.0),
+                          border: Border.all(
+                            width: 0.5,
+                            color: Colors.grey,
+                          ),
+                          color: Colors.grey[100]),
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 10),
+                        child: TextFormField(
+                          controller: passController,
+                          onChanged: _passChanged,
+                          obscureText: true,
+                          decoration: const InputDecoration(
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
+                            disabledBorder: InputBorder.none,
+                            hintText: 'Senha',
+                            suffixIcon: Icon(Icons.remove_red_eye_outlined),
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
-                  color: Colors.blue[300],
-                ),
-              ),
-            ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 25.0, bottom: 25.0),
+                    child: Container(
+                      height: 50.0,
+                      decoration: BoxDecoration(
+                        border: Border.all(width: isCompleted == true ? 1 : 0, color: Colors.grey),
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(isCompleted == true ? Colors.blue : Colors.blue.shade100),
+                        ),
+                        child: Text(
+                          "Entrar",
+                          style:
+                              TextStyle(color: isCompleted == true ? Colors.white : Colors.white54, fontSize: 20.0),
+                        ),
+                      ),
+                    ),
+                  ),
             Padding(padding: EdgeInsets.only(bottom: 25.0), child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -133,7 +186,6 @@ class _HomePageState extends State<HomePage> {
               text: TextSpan(
                 style: TextStyle(color: Colors.grey, fontSize: 14.0),
                 children: <TextSpan>[
- 
                   TextSpan(text: 'Esqueceu seus dados de login?'),
                   TextSpan(
                       text: ' Obtenha ajuda para entrar.',
@@ -156,18 +208,18 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: Container(
-                    height: 1.0,
+                    height: 0.5,
                     width: 120.0,
-                    color: Colors.blueGrey,
+                    color: Colors.grey,
                   ),
                 ),
-                Text('OU', style: TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.w700)),
+                Text('OU', style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w700)),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: Container(
-                    height: 1.0,
+                    height: 0.5,
                     width: 120.0,
-                    color: Colors.blueGrey,
+                    color: Colors.grey,
                   ),
                 ),
               ],
