@@ -61,8 +61,9 @@ class _HomePageState extends State<HomePage> {
           }).toList(),
         ),
       ),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.fromLTRB(25.0, 130.0, 25.0, 0.0),
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        padding: EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 0.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
@@ -73,8 +74,10 @@ class _HomePageState extends State<HomePage> {
               width: 70.0,
               height: 70.0,
             ),
-            Divider(height: 25.0),
-            TextFormField(
+            const Divider(height: 25.0),
+            Container(
+              height: 40.0,
+              child: TextFormField(
               keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(
                 hintText: 'Número de telefone, email ou nome de usuário',
@@ -86,10 +89,15 @@ class _HomePageState extends State<HomePage> {
                 return null;
               },
             ),
-            Divider(height: 25.0),
-            TextFormField(
+            ),
+            const Divider(height: 25.0),
+            Container(
+              height: 40.0,
+              child: TextFormField(
               obscureText: true,
               decoration: const InputDecoration(
+                filled: true,
+                fillColor: Colors.grey,
                 hintText: 'Senha',
                 suffixIcon: Icon(Icons.remove_red_eye_outlined),
               ),
@@ -100,12 +108,16 @@ class _HomePageState extends State<HomePage> {
                 return null;
               },
             ),
+            ),
             Padding(
               padding: EdgeInsets.only(top: 25.0, bottom: 25.0),
               child: Container(
                 height: 50.0,
                 child: RaisedButton(
                   onPressed: () {},
+                  shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(6.0),
+                  ),
                   child: Text(
                     "Entrar",
                     style: TextStyle(color: Colors.white, fontSize: 20.0),
@@ -114,23 +126,126 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            RichText(
+            Padding(padding: EdgeInsets.only(bottom: 25.0), child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Flexible(child: RichText(
               text: TextSpan(
-                style: TextStyle(color: Colors.grey, fontSize: 16.0),
+                style: TextStyle(color: Colors.grey, fontSize: 14.0),
                 children: <TextSpan>[
+ 
                   TextSpan(text: 'Esqueceu seus dados de login?'),
                   TextSpan(
                       text: ' Obtenha ajuda para entrar.',
-                      style: TextStyle(color: Colors.blue[900], fontWeight: FontWeight.w700,),
+                      style: TextStyle(
+                        color: Colors.blue[700],
+                        fontWeight: FontWeight.w700,
+                      ),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
                           print('CLICOU');
-                        }),                  
+                        }),
+                ],
+              ),
+            ),),
+              ],
+            )),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.0),
+                  child: Container(
+                    height: 1.0,
+                    width: 120.0,
+                    color: Colors.blueGrey,
+                  ),
+                ),
+                Text('OU', style: TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.w700)),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.0),
+                  child: Container(
+                    height: 1.0,
+                    width: 120.0,
+                    color: Colors.blueGrey,
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 25.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Icon(Icons.facebook_rounded, color: Colors.blue[700]),
+                  Padding(
+                    padding: EdgeInsets.only(left: 5.0),
+                    child: Text(
+                      "Entrar com o Facebook",
+                      style: TextStyle(
+                          color: Colors.blue[700],
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w700),
+                    ),
+                  )
                 ],
               ),
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: _DemoBottomAppBar(),
+    );
+  }
+}
+
+
+class _DemoBottomAppBar extends StatelessWidget {
+  const _DemoBottomAppBar({
+    this.fabLocation = FloatingActionButtonLocation.endDocked,
+    this.shape = const CircularNotchedRectangle(),
+  });
+
+  final FloatingActionButtonLocation fabLocation;
+  final NotchedShape? shape;
+
+  static final List<FloatingActionButtonLocation> centerLocations =
+      <FloatingActionButtonLocation>[
+    FloatingActionButtonLocation.centerDocked,
+    FloatingActionButtonLocation.centerFloat,
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomAppBar(
+      shape: shape,
+      color: Colors.white,
+      elevation: 0,
+      child: IconTheme(
+        data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
+        child: Padding(padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0), child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            RichText(
+              text: TextSpan(
+                style: TextStyle(color: Colors.grey, fontSize: 16.0),
+                children: <TextSpan>[
+                  TextSpan(text: 'Não tem uma conta?'),
+                  TextSpan(
+                      text: ' Cadastre-se.',
+                      style: TextStyle(
+                        color: Colors.blue[700],
+                        fontWeight: FontWeight.w700,
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          print('CLICOU');
+                        }),
+                ],
+              ),
+            ),
+          ],
+        ),),
       ),
     );
   }
