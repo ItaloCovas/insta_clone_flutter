@@ -1,7 +1,7 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:insta_clone/main.dart';
+import 'package:insta_clone/pages/main_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,16 +17,56 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: getAppBar(),
-      // backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
+      body: body(),
       resizeToAvoidBottomInset: false,
       bottomNavigationBar: footer(),
     );
   }
 
-  getAppBar() {
+  Widget body() {
+    List<Widget> pages = [
+      MainPage(),
+         Center(
+           child: Text("Home Page", style: TextStyle(
+             fontSize: 20.0,
+             fontWeight: FontWeight.bold,
+             color: Colors.white,
+           ),),
+         ),
+         Center(
+           child: Text("Home Page", style: TextStyle(
+             fontSize: 20.0,
+             fontWeight: FontWeight.bold,
+             color: Colors.white,
+           ),),
+         ),
+         Center(
+           child: Text("Home Page", style: TextStyle(
+             fontSize: 20.0,
+             fontWeight: FontWeight.bold,
+             color: Colors.white,
+           ),),
+         ),
+         Center(
+           child: Text("Conta", style: TextStyle(
+             fontSize: 20.0,
+             fontWeight: FontWeight.bold,
+             color: Colors.white,
+           ),),
+         ),
+    ];
+
+    return IndexedStack(
+      index: pageIndex,
+      children: pages,
+    );
+  }
+
+   getAppBar() {
     if (pageIndex == 0) {
       return AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xFF131313),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
@@ -46,9 +86,25 @@ class _HomePageState extends State<HomePage> {
         ),
       );
     } else if (pageIndex == 1) {
-      return null;
+      return AppBar(backgroundColor: Color(0xFF131313));
     } else if (pageIndex == 2) {
-      return AppBar(backgroundColor: Colors.black);
+      return AppBar(
+        backgroundColor: Color(0xFF131313),
+        title: Text('Nova Publicação'),
+
+      );
+    } else if (pageIndex == 3) {
+      return AppBar(
+        backgroundColor: Color(0xFF131313),
+        title: Text('Atividade'),
+
+      );
+    } else {
+      return AppBar(
+        backgroundColor: Color(0xFF131313),
+        title: Text('Conta'),
+
+      );
     }
   }
 
@@ -56,7 +112,7 @@ class _HomePageState extends State<HomePage> {
     List bottomItems = [
       pageIndex == 0
           ? "assets/images/home_active_icon.svg"
-          : "assets/images/home_icon.svg ",
+          : "assets/images/home_icon.svg",
       pageIndex == 1
           ? "assets/images/search_active_icon.svg"
           : "assets/images/search_icon.svg",
@@ -75,7 +131,7 @@ class _HomePageState extends State<HomePage> {
       width: double.infinity,
       height: 80.0,
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: Color(0xFF131313),
       ),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 20.0),
@@ -97,6 +153,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   selectedTab(index) {
-    pageIndex = index;
+    setState(() {
+      pageIndex = index;
+    });
   }
 }

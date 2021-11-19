@@ -39,12 +39,12 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFF131313),
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xFF131313),
         title: DropdownButton<String>(
           value: dropdownValue,
           icon: const Icon(Icons.keyboard_arrow_down, color: Colors.grey),
@@ -267,7 +267,7 @@ class _DemoBottomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomAppBar(
       shape: shape,
-      color: Colors.black,
+      color: Color(0xFF131313),
       elevation: 0,
       child: IconTheme(
         data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
