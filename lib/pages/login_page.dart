@@ -39,12 +39,12 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black,
         title: DropdownButton<String>(
           value: dropdownValue,
           icon: const Icon(Icons.keyboard_arrow_down, color: Colors.grey),
@@ -92,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                       width: 0.5,
                       color: Colors.grey,
                     ),
-                    color: Colors.grey[100]),
+                    color: Colors.grey[300]),
                 child: Padding(
                   padding: EdgeInsets.only(left: 10),
                   child: TextFormField(
@@ -120,7 +120,7 @@ class _LoginPageState extends State<LoginPage> {
                       width: 0.5,
                       color: Colors.grey,
                     ),
-                    color: Colors.grey[100]),
+                    color: Colors.grey[300]),
                 child: Padding(
                   padding: EdgeInsets.only(left: 10),
                   child: TextFormField(
@@ -151,7 +151,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => HomePage())
+                      MaterialPageRoute(builder: (context) => const HomePage())
                     );
                   },
                   style: ButtonStyle(
@@ -267,7 +267,7 @@ class _DemoBottomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomAppBar(
       shape: shape,
-      color: Colors.white,
+      color: Colors.black,
       elevation: 0,
       child: IconTheme(
         data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),

@@ -20,6 +20,14 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget footer() {
+     List bottomItems = [
+       "assets/images/home_active_icon.svg",
+       "assets/images/search_active_icon.svg",
+       "assets/images/upload_active_icon.svg",
+       "assets/images/love_active_icon.svg",
+       "assets/images/account_active_icon.svg",
+     ];
+
      return Container(
        width: double.infinity,
        height: 80.0,
@@ -30,8 +38,8 @@ class _HomePageState extends State<HomePage> {
          padding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 20.0),
          child: Row(
            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-           children: List.generate(5, (index) {
-             return SvgPicture.asset("./assets/images/home_active_icon", width: 27);
+           children: List.generate(bottomItems.length, (index) {
+             return SvgPicture.asset(bottomItems[index], width: 27.0,);
            }),
          ),
        ),
