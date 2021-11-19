@@ -27,34 +27,46 @@ class _HomePageState extends State<HomePage> {
   Widget body() {
     List<Widget> pages = [
       MainPage(),
-         Center(
-           child: Text("Home Page", style: TextStyle(
-             fontSize: 20.0,
-             fontWeight: FontWeight.bold,
-             color: Colors.white,
-           ),),
-         ),
-         Center(
-           child: Text("Home Page", style: TextStyle(
-             fontSize: 20.0,
-             fontWeight: FontWeight.bold,
-             color: Colors.white,
-           ),),
-         ),
-         Center(
-           child: Text("Home Page", style: TextStyle(
-             fontSize: 20.0,
-             fontWeight: FontWeight.bold,
-             color: Colors.white,
-           ),),
-         ),
-         Center(
-           child: Text("Conta", style: TextStyle(
-             fontSize: 20.0,
-             fontWeight: FontWeight.bold,
-             color: Colors.white,
-           ),),
-         ),
+      Center(
+        child: Text(
+          "Home Page",
+          style: TextStyle(
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+      ),
+      Center(
+        child: Text(
+          "Home Page",
+          style: TextStyle(
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+      ),
+      Center(
+        child: Text(
+          "Home Page",
+          style: TextStyle(
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+      ),
+      Center(
+        child: Text(
+          "Conta",
+          style: TextStyle(
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+      ),
     ];
 
     return IndexedStack(
@@ -63,7 +75,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-   getAppBar() {
+  getAppBar() {
     if (pageIndex == 0) {
       return AppBar(
         backgroundColor: Color(0xFF131313),
@@ -91,19 +103,16 @@ class _HomePageState extends State<HomePage> {
       return AppBar(
         backgroundColor: Color(0xFF131313),
         title: Text('Nova Publicação'),
-
       );
     } else if (pageIndex == 3) {
       return AppBar(
         backgroundColor: Color(0xFF131313),
         title: Text('Atividade'),
-
       );
     } else {
       return AppBar(
         backgroundColor: Color(0xFF131313),
         title: Text('Conta'),
-
       );
     }
   }

@@ -150,9 +150,8 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => const HomePage())
-                    );
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => const HomePage()));
                   },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
@@ -301,5 +300,3 @@ class _DemoBottomAppBar extends StatelessWidget {
     );
   }
 }
-
-
