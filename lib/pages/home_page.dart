@@ -81,7 +81,10 @@ class _HomePageState extends State<HomePage> {
     } else {
       return AppBar(
         backgroundColor: Color(0xFF131313),
-        title: Text('Conta'),
+        title: Text(
+          "framework.digital",
+          style: TextStyle(fontSize: 17),
+        ),
       );
     }
   }
@@ -112,7 +115,8 @@ class _HomePageState extends State<HomePage> {
         color: Color(0xFF131313),
       ),
       child: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20, top: 15),
+        padding:
+            const EdgeInsets.only(left: 20, right: 20, bottom: 20, top: 15),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: List.generate(bottomItems.length, (index) {

@@ -4,7 +4,7 @@ import 'package:insta_clone/theme/colors.dart';
 import 'package:insta_clone/widgets/search_category_item.dart';
 
 class SearchPage extends StatefulWidget {
-  const SearchPage({ Key? key }) : super(key: key);
+  const SearchPage({Key? key}) : super(key: key);
 
   @override
   _SearchPageState createState() => _SearchPageState();
@@ -16,7 +16,7 @@ class _SearchPageState extends State<SearchPage> {
     return body();
   }
 
-  Widget body(){
+  Widget body() {
     var size = MediaQuery.of(context).size;
 
     return SingleChildScrollView(
@@ -27,7 +27,7 @@ class _SearchPageState extends State<SearchPage> {
               children: <Widget>[
                 SizedBox(width: 15),
                 Container(
-                  width: size.width-30,
+                  width: size.width - 30,
                   height: 45,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -36,10 +36,11 @@ class _SearchPageState extends State<SearchPage> {
                   child: TextField(
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      prefixIcon: Icon(Icons.search, color: white.withOpacity(0.3)),
+                      prefixIcon:
+                          Icon(Icons.search, color: white.withOpacity(0.3)),
                     ),
                     style: TextStyle(
-                      color: white.withOpacity(0.3),
+                      color: white,
                     ),
                     cursorColor: white.withOpacity(0.3),
                   ),
@@ -48,11 +49,15 @@ class _SearchPageState extends State<SearchPage> {
               ],
             ),
           ),
-          SizedBox(height: 15,),
+          SizedBox(
+            height: 15,
+          ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Padding(
-              padding: const EdgeInsets.only(left: 15,),
+              padding: const EdgeInsets.only(
+                left: 15,
+              ),
               child: Row(
                 children: List.generate(searchCategories.length, (index) {
                   return CategoryStoryItem(
@@ -62,17 +67,22 @@ class _SearchPageState extends State<SearchPage> {
               ),
             ),
           ),
-          SizedBox(height: 15,),
+          SizedBox(
+            height: 15,
+          ),
           Wrap(
             spacing: 1,
             runSpacing: 1,
             children: List.generate(searchImages.length, (index) {
               return Container(
-                width: (size.width-3)/3,
-                height: (size.width-3)/3,
+                width: (size.width - 3) / 3,
+                height: (size.width - 3) / 3,
                 decoration: BoxDecoration(
-                image: DecorationImage(image: NetworkImage(searchImages[index]), fit: BoxFit.cover),
-            ),);
+                  image: DecorationImage(
+                      image: NetworkImage(searchImages[index]),
+                      fit: BoxFit.cover),
+                ),
+              );
             }),
           ),
         ],
