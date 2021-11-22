@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:insta_clone/main.dart';
 import 'package:insta_clone/pages/main_page.dart';
+import 'package:insta_clone/pages/search_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -27,16 +28,7 @@ class _HomePageState extends State<HomePage> {
   Widget body() {
     List<Widget> pages = [
       MainPage(),
-      Center(
-        child: Text(
-          "Home Page",
-          style: TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-      ),
+      SearchPage(),
       Center(
         child: Text(
           "Home Page",
@@ -98,7 +90,7 @@ class _HomePageState extends State<HomePage> {
         ),
       );
     } else if (pageIndex == 1) {
-      return AppBar(backgroundColor: Color(0xFF131313));
+      return null;
     } else if (pageIndex == 2) {
       return AppBar(
         backgroundColor: Color(0xFF131313),
@@ -138,12 +130,12 @@ class _HomePageState extends State<HomePage> {
 
     return Container(
       width: double.infinity,
-      height: 80.0,
+      height: 60.0,
       decoration: BoxDecoration(
         color: Color(0xFF131313),
       ),
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 20.0),
+        padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20, top: 15),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: List.generate(bottomItems.length, (index) {
