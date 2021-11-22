@@ -45,12 +45,12 @@ class PostItem extends StatelessWidget {
                                     image: NetworkImage(profileImg),
                                     fit: BoxFit.cover)),
                           ),
-                          SizedBox(
+                           SizedBox(
                             width: 6,
                           ),
                           Text(
                             name,
-                            style: TextStyle(
+                            style:  TextStyle(
                                 color: white,
                                 fontSize: 15,
                                 fontWeight: FontWeight.w500),
@@ -60,14 +60,14 @@ class PostItem extends StatelessWidget {
                     ],
                   ),
                 ),
-                Icon(
+                 Icon(
                   LineIcons.verticalEllipsis,
                   color: white,
                 )
               ],
             ),
           ),
-          SizedBox(
+           SizedBox(
             height: 10,
           ),
           Container(
@@ -77,7 +77,7 @@ class PostItem extends StatelessWidget {
                     image: NetworkImage(postImg),
                     fit: BoxFit.cover)),
           ),
-          SizedBox(
+           SizedBox(
             height: 10,
           ),
           Padding(
@@ -90,7 +90,10 @@ class PostItem extends StatelessWidget {
                     isLoved ? SvgPicture.asset(
                       "assets/images/loved_icon.svg",
                       width: 27,
-                    ) : Container(),
+                    ) : SvgPicture.asset(
+                      "assets/images/love_icon.svg",
+                      width: 27,
+                    ),
                     SizedBox(
                       width: 20,
                     ),

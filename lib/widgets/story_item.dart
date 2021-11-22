@@ -10,13 +10,13 @@ class StoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 20.0, bottom: 10.0),
+      padding: const EdgeInsets.only(right: 15.0),
       child: Column(
         children: [
           Container(
             width: 68,
             height: 68,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               shape: BoxShape.circle,
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
@@ -53,7 +53,7 @@ class StoryItem extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   color: Colors.white,
-                )),
+                ), textAlign: TextAlign.center)
           ),
         ],
       ),

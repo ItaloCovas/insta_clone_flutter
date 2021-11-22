@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:insta_clone/main.dart';
+import 'package:insta_clone/pages/activity_page.dart';
 import 'package:insta_clone/pages/main_page.dart';
+import 'package:insta_clone/pages/newpost_page.dart';
 import 'package:insta_clone/pages/search_page.dart';
+
+import 'profile_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -29,36 +33,9 @@ class _HomePageState extends State<HomePage> {
     List<Widget> pages = [
       MainPage(),
       SearchPage(),
-      Center(
-        child: Text(
-          "Home Page",
-          style: TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-      ),
-      Center(
-        child: Text(
-          "Home Page",
-          style: TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-      ),
-      Center(
-        child: Text(
-          "Conta",
-          style: TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-      ),
+      NewPost(),
+      ActivityPage(),
+      ProfilePage(),
     ];
 
     return IndexedStack(
