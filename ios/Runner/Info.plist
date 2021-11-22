@@ -27,6 +27,10 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UISupportedInterfaceOrientations</key>
+	<key>NSCameraUsageDescription</key>
+	<string>Posso usar a câmera?</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Posso usar o microfone?</string>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
