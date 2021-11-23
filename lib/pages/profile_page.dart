@@ -15,7 +15,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return SingleChildScrollView(
       child: Container(
         child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(15.0),
@@ -105,19 +105,166 @@ class _ProfilePageState extends State<ProfilePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text('framework.digital', style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 14,
-                    color: white,
-                  ),),
+                  Text(
+                    'framework.digital',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 14,
+                      color: white,
+                    ),
+                  ),
                   SizedBox(height: 5),
-                  Text('Criando experiências que fazem sentido. 💜', style: TextStyle(
-                    fontSize: 14,
-                    color: white,
-                  ),),
+                  Text(
+                    'Criando experiências que fazem sentido. 💜',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: white,
+                    ),
+                  ),
                 ],
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(15, 5, 15, 10),
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    width: 288,
+                    height: 35,
+                    decoration: BoxDecoration(
+                      border:
+                          Border.all(width: 1.2, color: Colors.grey.shade600),
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Colors.transparent),
+                      ),
+                      child: Text('Editar perfil',
+                          style: TextStyle(
+                            color: white,
+                            fontWeight: FontWeight.w700,
+                          )),
+                    ),
+                  ),
+                  SizedBox(width: 7),
+                  Container(
+                    width: 35,
+                    height: 35,
+                    decoration: BoxDecoration(
+                      border:
+                          Border.all(width: 1.2, color: Colors.grey.shade600),
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                    child: IconButton(
+                      padding: EdgeInsets.zero,
+                      onPressed: () {},
+                      icon: Icon(Icons.keyboard_arrow_down,
+                          color: Colors.white, size: 20),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(15, 5, 15, 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        'Destaque dos stories',
+                        style: TextStyle(
+                          color: white,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      Icon(Icons.keyboard_arrow_up, color: white),
+                    ],
+                  ),
+                  Text(
+                    'Mantenha seus stories favoritos no seu perfil',
+                    style: TextStyle(
+                      color: white,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          width: 60,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            color: Colors.transparent,
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              width: 1.2,
+                              color: white,
+                            ),
+                          ),
+                          child: Icon(Icons.add, color: white),
+                        ),
+                        SizedBox(width: 10),
+                        Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade900,
+                              shape: BoxShape.circle,
+                            )),
+                        SizedBox(width: 10),
+                        Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade900,
+                              shape: BoxShape.circle,
+                            )),
+                        SizedBox(width: 10),
+                        Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade900,
+                              shape: BoxShape.circle,
+                            )),
+                        SizedBox(width: 10),
+                        Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade900,
+                              shape: BoxShape.circle,
+                            )),
+                        SizedBox(width: 10),
+                        Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade900,
+                              shape: BoxShape.circle,
+                            )),
+                        SizedBox(width: 10),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(30, 0, 15, 10),
+              child: Text('Novo', style: TextStyle(
+                color: white,
+              )),
+              )
           ],
         ),
       ),
