@@ -12,54 +12,114 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height / 2.5,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(4, 10, 5, 4),
-            child: Row(
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width / 3,
-                  height: MediaQuery.of(context).size.height / 6,
-                  child: Column(
-                    children: [
-                      Container(
-                        width: 92,
-                        height: 92,
-                        child: Stack(
-                          children: <Widget>[
-                            Container(
-                              decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  image: DecorationImage(
-                                      image: NetworkImage(profile),
-                                      fit: BoxFit.cover)),
-                            ),
-                          ],
-                        ),
+    return SingleChildScrollView(
+      child: Container(
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Row(
+                children: <Widget>[
+                  Container(
+                      width: 80,
+                      height: 80,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 2,
+                          ),
+                          image: DecorationImage(
+                            image: NetworkImage(profile),
+                            fit: BoxFit.cover,
+                          ))),
+                  SizedBox(width: 15),
+                  Column(
+                    children: <Widget>[
+                      Text('10',
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w700,
+                              color: white)),
+                      SizedBox(
+                        height: 10.0,
                       ),
                       SizedBox(
-                        width: 20,
-                        height: 20,
-                      ),
-                      SizedBox(
-                          width: 200.0,
-                          child: Text('Framework Digital',
-                              textAlign: TextAlign.center,
-                              overflow: TextOverflow.fade,
+                          width: 70,
+                          child: Text('Publicações',
+                              overflow: TextOverflow.ellipsis,
                               style: TextStyle(
-                                color: white,
-                              ))),
+                                color: Colors.white,
+                              ),
+                              textAlign: TextAlign.center)),
                     ],
                   ),
-                ),
-              ],
+                  SizedBox(width: 20),
+                  Column(
+                    children: <Widget>[
+                      Text('7.273',
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w700,
+                              color: white)),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      SizedBox(
+                          width: 65,
+                          child: Text('Seguidores',
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                              textAlign: TextAlign.center)),
+                    ],
+                  ),
+                  SizedBox(width: 10),
+                  Column(
+                    children: <Widget>[
+                      Text('1.234',
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w700,
+                              color: white)),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      SizedBox(
+                          width: 70,
+                          child: Text('Seguindo',
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                              textAlign: TextAlign.center)),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          )
-        ],
+            Padding(
+              padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text('framework.digital', style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 14,
+                    color: white,
+                  ),),
+                  SizedBox(height: 5),
+                  Text('Criando experiências que fazem sentido. 💜', style: TextStyle(
+                    fontSize: 14,
+                    color: white,
+                  ),),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
