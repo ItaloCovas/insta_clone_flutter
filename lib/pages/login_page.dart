@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,
-        padding: EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 0.0),
+        padding: EdgeInsets.fromLTRB(25.0, 120.0, 25.0, 0.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
