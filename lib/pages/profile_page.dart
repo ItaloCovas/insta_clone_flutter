@@ -1,4 +1,3 @@
-import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:insta_clone/constant/search_json.dart';
 import 'package:insta_clone/constant/story_json.dart';
@@ -26,8 +25,8 @@ class _ProfilePageState extends State<ProfilePage> {
                 child: Row(
                   children: <Widget>[
                     Container(
-                        width: 80,
-                        height: 80,
+                        width: 90,
+                        height: 90,
                         decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             border: Border.all(
@@ -38,7 +37,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               image: NetworkImage(profile),
                               fit: BoxFit.cover,
                             ))),
-                    SizedBox(width: 15),
+                    SizedBox(width: 35),
                     Column(
                       children: <Widget>[
                         Text('10',
@@ -133,7 +132,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 child: Row(
                   children: <Widget>[
                     Container(
-                      width: 288,
+                      width: 320,
                       height: 35,
                       decoration: BoxDecoration(
                         border:
@@ -148,7 +147,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                         child: Text('Editar perfil',
                             style: TextStyle(
-                              color: white,
+                              color: Colors.white,
                               fontWeight: FontWeight.w700,
                             )),
                       ),
@@ -216,7 +215,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             ),
                             child: Icon(Icons.add, color: white),
                           ),
-                          SizedBox(width: 10),
+                          SizedBox(width: 15),
                           Container(
                               width: 60,
                               height: 60,
@@ -224,7 +223,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 color: Colors.grey.shade900,
                                 shape: BoxShape.circle,
                               )),
-                          SizedBox(width: 10),
+                          SizedBox(width: 15),
                           Container(
                               width: 60,
                               height: 60,
@@ -232,7 +231,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 color: Colors.grey.shade900,
                                 shape: BoxShape.circle,
                               )),
-                          SizedBox(width: 10),
+                          SizedBox(width: 15),
                           Container(
                               width: 60,
                               height: 60,
@@ -240,7 +239,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 color: Colors.grey.shade900,
                                 shape: BoxShape.circle,
                               )),
-                          SizedBox(width: 10),
+                          SizedBox(width: 15),
                           Container(
                               width: 60,
                               height: 60,
@@ -248,7 +247,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 color: Colors.grey.shade900,
                                 shape: BoxShape.circle,
                               )),
-                          SizedBox(width: 10),
+                          SizedBox(width: 15),
                           Container(
                               width: 60,
                               height: 60,
@@ -256,26 +255,48 @@ class _ProfilePageState extends State<ProfilePage> {
                                 color: Colors.grey.shade900,
                                 shape: BoxShape.circle,
                               )),
-                          SizedBox(width: 10),
+                          SizedBox(width: 15),
                         ],
                       ),
                     ),
                   ],
                 ),
               ),
-              TabBar(
-                tabs: [
-                  Tab(
-                    icon: Icon(
-                      Icons.grid_on,
-                      color: Colors.white,
-                    ),
-                  ),
-                  Tab(
+              Padding(
+                padding: const EdgeInsets.only(top: 10.0),
+                child: TabBar(
+                  indicatorColor: Colors.grey.shade100,
+                  indicatorWeight: 2,
+                  tabs: [
+                    Tab(
                       icon: Icon(
-                    Icons.person,
-                  )),
-                ],
+                        Icons.grid_on,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Tab(
+                        icon: Icon(
+                      Icons.person,
+                    )),
+                  ],
+                ),
+              ),
+              Wrap(
+                spacing: 1,
+                runSpacing: 1,
+                children: List.generate(searchImages.length, (index) {
+                  var size = MediaQuery.of(context).size;
+
+                  return Container(
+                    width: (size.width - 3) / 3,
+                    height: (size.width - 3) / 3,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: NetworkImage(searchImages[index]),
+                          fit: BoxFit.cover),
+                    ),
+                  );
+                }),
               ),
             ],
           ),
