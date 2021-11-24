@@ -39,12 +39,12 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF131313),
+      backgroundColor: const Color(0xFF131313),
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
-        backgroundColor: Color(0xFF131313),
+        backgroundColor: const Color(0xFF131313),
         title: DropdownButton<String>(
           value: dropdownValue,
           icon: const Icon(Icons.keyboard_arrow_down, color: Colors.grey),
@@ -68,181 +68,182 @@ class _LoginPageState extends State<LoginPage> {
           }).toList(),
         ),
       ),
-      body: Container(
-        height: MediaQuery.of(context).size.height,
-        padding: EdgeInsets.fromLTRB(25.0, 120.0, 25.0, 0.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Image(
-              image: AssetImage(
-                './assets/images/logo.png',
-              ),
-              width: 70.0,
-              height: 70.0,
-            ),
-            const Divider(height: 25.0),
-            Padding(
-              padding: EdgeInsets.only(top: 0),
-              child: Container(
-                height: 50,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.0),
-                    border: Border.all(
-                      width: 0.5,
-                      color: Colors.grey,
-                    ),
-                    color: Colors.grey[300]),
-                child: Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: TextFormField(
-                    controller: nameController,
-                    onChanged: _nameChanged,
-                    obscureText: false,
-                    decoration: const InputDecoration(
-                      focusedBorder: InputBorder.none,
-                      enabledBorder: InputBorder.none,
-                      errorBorder: InputBorder.none,
-                      disabledBorder: InputBorder.none,
-                      hintText: 'Número de telefone, email ou nome de usuario',
-                    ),
-                  ),
+      body: SingleChildScrollView(
+        child: Container(
+          height: MediaQuery.of(context).size.height,
+          padding: const EdgeInsets.fromLTRB(25.0, 80.0, 25.0, 0.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              const Image(
+                image: AssetImage(
+                  './assets/images/logo.png',
                 ),
+                width: 70.0,
+                height: 70.0,
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 30),
-              child: Container(
-                height: 50,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.0),
-                    border: Border.all(
-                      width: 0.5,
-                      color: Colors.grey,
-                    ),
-                    color: Colors.grey[300]),
-                child: Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: TextFormField(
-                    controller: passController,
-                    onChanged: _passChanged,
-                    obscureText: true,
-                    decoration: const InputDecoration(
-                      focusedBorder: InputBorder.none,
-                      enabledBorder: InputBorder.none,
-                      errorBorder: InputBorder.none,
-                      disabledBorder: InputBorder.none,
-                      hintText: 'Senha',
-                      suffixIcon: Icon(Icons.remove_red_eye_outlined),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 25.0, bottom: 25.0),
-              child: Container(
-                height: 50.0,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                      width: isCompleted == true ? 1 : 0, color: Colors.grey),
-                  borderRadius: BorderRadius.circular(5.0),
-                ),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => const HomePage()));
-                  },
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                        isCompleted == true
-                            ? Colors.blue
-                            : Colors.blue.shade100),
-                  ),
-                  child: Text(
-                    "Entrar",
-                    style: TextStyle(
-                        color:
-                            isCompleted == true ? Colors.white : Colors.white54,
-                        fontSize: 20.0),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-                padding: EdgeInsets.only(bottom: 25.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Flexible(
-                      child: RichText(
-                        text: TextSpan(
-                          style: TextStyle(color: Colors.grey, fontSize: 14.0),
-                          children: <TextSpan>[
-                            TextSpan(text: 'Esqueceu seus dados de login?'),
-                            TextSpan(
-                                text: ' Obtenha ajuda para entrar.',
-                                style: TextStyle(
-                                  color: Colors.blue[700],
-                                  fontWeight: FontWeight.w700,
-                                ),
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () {
-                                    print('CLICOU');
-                                  }),
-                          ],
-                        ),
+              const Divider(height: 25.0),
+              Padding(
+                padding: const EdgeInsets.only(top: 0),
+                child: Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.0),
+                      border: Border.all(
+                        width: 0.5,
+                        color: Colors.grey,
+                      ),
+                      color: Colors.grey[300]),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: TextFormField(
+                      controller: nameController,
+                      onChanged: _nameChanged,
+                      obscureText: false,
+                      decoration: const InputDecoration(
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        disabledBorder: InputBorder.none,
+                        hintText: 'Número de telefone, email ou nome de usuario',
                       ),
                     ),
-                  ],
-                )),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10.0),
-                  child: Container(
-                    height: 0.5,
-                    width: 120.0,
-                    color: Colors.grey,
                   ),
                 ),
-                Text('OU',
-                    style: TextStyle(
-                        color: Colors.grey, fontWeight: FontWeight.w700)),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10.0),
-                  child: Container(
-                    height: 0.5,
-                    width: 120.0,
-                    color: Colors.grey,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 30),
+                child: Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.0),
+                      border: Border.all(
+                        width: 0.5,
+                        color: Colors.grey,
+                      ),
+                      color: Colors.grey[300]),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: TextFormField(
+                      controller: passController,
+                      onChanged: _passChanged,
+                      obscureText: true,
+                      decoration: const InputDecoration(
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        disabledBorder: InputBorder.none,
+                        hintText: 'Senha',
+                        suffixIcon: Icon(Icons.remove_red_eye_outlined),
+                      ),
+                    ),
                   ),
                 ),
-              ],
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 25.0),
-              child: Row(
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 25.0, bottom: 25.0),
+                child: Container(
+                  height: 50.0,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                        width: isCompleted == true ? 1 : 0, color: Colors.grey),
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) => const HomePage()));
+                    },
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          isCompleted == true
+                              ? Colors.blue
+                              : Colors.blue.shade100),
+                    ),
+                    child: Text(
+                      "Entrar",
+                      style: TextStyle(
+                          color:
+                              isCompleted == true ? Colors.white : Colors.white54,
+                          fontSize: 20.0),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                  padding: const EdgeInsets.only(bottom: 25.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Flexible(
+                        child: RichText(
+                          text: TextSpan(
+                            style: const TextStyle(color: Colors.grey, fontSize: 14.0),
+                            children: <TextSpan>[
+                              const TextSpan(text: 'Esqueceu seus dados de login?'),
+                              TextSpan(
+                                  text: ' Obtenha ajuda para entrar.',
+                                  style: TextStyle(
+                                    color: Colors.blue[700],
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () {
+                                    }),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  )),
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Icon(Icons.facebook_rounded, color: Colors.blue[700]),
                   Padding(
-                    padding: EdgeInsets.only(left: 5.0),
-                    child: Text(
-                      "Entrar com o Facebook",
-                      style: TextStyle(
-                          color: Colors.blue[700],
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.w700),
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Container(
+                      height: 0.5,
+                      width: 120.0,
+                      color: Colors.grey,
                     ),
-                  )
+                  ),
+                  const Text('OU',
+                      style: TextStyle(
+                          color: Colors.grey, fontWeight: FontWeight.w700)),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Container(
+                      height: 0.5,
+                      width: 120.0,
+                      color: Colors.grey,
+                    ),
+                  ),
                 ],
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.only(top: 25.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Icon(Icons.facebook_rounded, color: Colors.blue[700]),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5.0),
+                      child: Text(
+                        "Entrar com o Facebook",
+                        style: TextStyle(
+                            color: Colors.blue[700],
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w700),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-      bottomNavigationBar: _DemoBottomAppBar(),
+      bottomNavigationBar: const _DemoBottomAppBar(),
     );
   }
 }
@@ -266,20 +267,20 @@ class _DemoBottomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomAppBar(
       shape: shape,
-      color: Color(0xFF131313),
+      color: const Color(0xFF131313),
       elevation: 0,
       child: IconTheme(
         data: IconThemeData(color: Theme.of(context).colorScheme.onPrimary),
         child: Padding(
-          padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+          padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               RichText(
                 text: TextSpan(
-                  style: TextStyle(color: Colors.grey, fontSize: 16.0),
+                  style: const TextStyle(color: Colors.grey, fontSize: 16.0),
                   children: <TextSpan>[
-                    TextSpan(text: 'Não tem uma conta?'),
+                    const TextSpan(text: 'Não tem uma conta?'),
                     TextSpan(
                         text: ' Cadastre-se.',
                         style: TextStyle(
@@ -288,7 +289,6 @@ class _DemoBottomAppBar extends StatelessWidget {
                         ),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            print('CLICOU');
                           }),
                   ],
                 ),

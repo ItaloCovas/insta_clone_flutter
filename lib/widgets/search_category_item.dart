@@ -21,7 +21,7 @@ class CategoryStoryItem extends StatelessWidget {
               ),
               child: Padding(
       padding: const EdgeInsets.all(7),
-      child: Text(name, style: TextStyle(
+      child: Text(name, style: const TextStyle(
         color: white,
         fontWeight: FontWeight.w500,
         fontSize: 15,

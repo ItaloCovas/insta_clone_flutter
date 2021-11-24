@@ -17,6 +17,7 @@ class _ProfilePageState extends State<ProfilePage> {
       length: 2,
       child: SingleChildScrollView(
         child: Container(
+          width: MediaQuery.of(context).size.width,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -37,68 +38,74 @@ class _ProfilePageState extends State<ProfilePage> {
                               image: NetworkImage(profile),
                               fit: BoxFit.cover,
                             ))),
-                    SizedBox(width: 35),
-                    Column(
-                      children: <Widget>[
-                        Text('10',
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w700,
-                                color: white)),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        SizedBox(
-                            width: 70,
-                            child: Text('Publicações',
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                                textAlign: TextAlign.center)),
-                      ],
+                    const SizedBox(width: 20),
+                    Flexible(
+                      child: Column(
+                        children: const <Widget>[
+                          Text('10',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w700,
+                                  color: white)),
+                          SizedBox(
+                            height: 10.0,
+                          ),
+                          SizedBox(
+                              width: 70,
+                              child: Text('Publicações',
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                  textAlign: TextAlign.center)),
+                        ],
+                      ),
                     ),
-                    SizedBox(width: 20),
-                    Column(
-                      children: <Widget>[
-                        Text('7.273',
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w700,
-                                color: white)),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        SizedBox(
-                            width: 65,
-                            child: Text('Seguidores',
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                                textAlign: TextAlign.center)),
-                      ],
+                    const SizedBox(width: 20),
+                    Flexible(
+                      child: Column(
+                        children: const <Widget>[
+                          Text('7.273',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w700,
+                                  color: white)),
+                          SizedBox(
+                            height: 10.0,
+                          ),
+                          SizedBox(
+                              width: 65,
+                              child: Text('Seguidores',
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                  textAlign: TextAlign.center)),
+                        ],
+                      ),
                     ),
-                    SizedBox(width: 10),
-                    Column(
-                      children: <Widget>[
-                        Text('1.234',
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w700,
-                                color: white)),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        SizedBox(
-                            width: 70,
-                            child: Text('Seguindo',
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                                textAlign: TextAlign.center)),
-                      ],
+                    const SizedBox(width: 10),
+                    Flexible(
+                      child: Column(
+                        children: const <Widget>[
+                          Text('1.234',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w700,
+                                  color: white)),
+                          SizedBox(
+                            height: 10.0,
+                          ),
+                          SizedBox(
+                              width: 70,
+                              child: Text('Seguindo',
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                  textAlign: TextAlign.center)),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -107,7 +114,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
+                  children: const <Widget>[
                     Text(
                       'framework.digital',
                       style: TextStyle(
@@ -131,28 +138,30 @@ class _ProfilePageState extends State<ProfilePage> {
                 padding: const EdgeInsets.fromLTRB(15, 5, 15, 10),
                 child: Row(
                   children: <Widget>[
-                    Container(
-                      width: 320,
-                      height: 35,
-                      decoration: BoxDecoration(
-                        border:
-                            Border.all(width: 1.2, color: Colors.grey.shade600),
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                              Colors.transparent),
+                    Flexible(
+                      child: Container(
+                        width: 320,
+                        height: 35,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              width: 1.2, color: Colors.grey.shade600),
+                          borderRadius: BorderRadius.circular(5.0),
                         ),
-                        child: Text('Editar perfil',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w700,
-                            )),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                                Colors.transparent),
+                          ),
+                          child: const Text('Editar perfil',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                              )),
+                        ),
                       ),
                     ),
-                    SizedBox(width: 7),
+                    const SizedBox(width: 7),
                     Container(
                       width: 35,
                       height: 35,
@@ -164,7 +173,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: IconButton(
                         padding: EdgeInsets.zero,
                         onPressed: () {},
-                        icon: Icon(Icons.keyboard_arrow_down,
+                        icon: const Icon(Icons.keyboard_arrow_down,
                             color: Colors.white, size: 20),
                       ),
                     ),
@@ -178,7 +187,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   children: <Widget>[
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
+                      children: const <Widget>[
                         Text(
                           'Destaque dos stories',
                           style: TextStyle(
@@ -189,13 +198,13 @@ class _ProfilePageState extends State<ProfilePage> {
                         Icon(Icons.keyboard_arrow_up, color: white),
                       ],
                     ),
-                    Text(
+                    const Text(
                       'Mantenha seus stories favoritos no seu perfil',
                       style: TextStyle(
                         color: white,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     SingleChildScrollView(
@@ -213,9 +222,9 @@ class _ProfilePageState extends State<ProfilePage> {
                                 color: white,
                               ),
                             ),
-                            child: Icon(Icons.add, color: white),
+                            child: const Icon(Icons.add, color: white),
                           ),
-                          SizedBox(width: 15),
+                          const SizedBox(width: 15),
                           Container(
                               width: 60,
                               height: 60,
@@ -223,7 +232,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 color: Colors.grey.shade900,
                                 shape: BoxShape.circle,
                               )),
-                          SizedBox(width: 15),
+                          const SizedBox(width: 15),
                           Container(
                               width: 60,
                               height: 60,
@@ -231,7 +240,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 color: Colors.grey.shade900,
                                 shape: BoxShape.circle,
                               )),
-                          SizedBox(width: 15),
+                          const SizedBox(width: 15),
                           Container(
                               width: 60,
                               height: 60,
@@ -239,7 +248,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 color: Colors.grey.shade900,
                                 shape: BoxShape.circle,
                               )),
-                          SizedBox(width: 15),
+                          const SizedBox(width: 15),
                           Container(
                               width: 60,
                               height: 60,
@@ -247,7 +256,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 color: Colors.grey.shade900,
                                 shape: BoxShape.circle,
                               )),
-                          SizedBox(width: 15),
+                          const SizedBox(width: 15),
                           Container(
                               width: 60,
                               height: 60,
@@ -255,7 +264,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 color: Colors.grey.shade900,
                                 shape: BoxShape.circle,
                               )),
-                          SizedBox(width: 15),
+                          const SizedBox(width: 15),
                         ],
                       ),
                     ),
@@ -267,7 +276,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 child: TabBar(
                   indicatorColor: Colors.grey.shade100,
                   indicatorWeight: 2,
-                  tabs: [
+                  tabs: const [
                     Tab(
                       icon: Icon(
                         Icons.grid_on,
@@ -281,22 +290,32 @@ class _ProfilePageState extends State<ProfilePage> {
                   ],
                 ),
               ),
-              Wrap(
-                spacing: 1,
-                runSpacing: 1,
-                children: List.generate(searchImages.length, (index) {
-                  var size = MediaQuery.of(context).size;
-
-                  return Container(
-                    width: (size.width - 3) / 3,
-                    height: (size.width - 3) / 3,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: NetworkImage(searchImages[index]),
-                          fit: BoxFit.cover),
-                    ),
-                  );
-                }),
+              SizedBox(
+                height: 300,
+                child: TabBarView(
+                  children: <Widget>[
+                    GridView.count(
+                        primary: false,
+                        padding: const EdgeInsets.all(0),
+                        crossAxisSpacing: 3,
+                        mainAxisSpacing: 3,
+                        crossAxisCount: 3,
+                        children: List.generate(searchImages.length, (index) {
+                          var size = MediaQuery.of(context).size;
+              
+                          return Container(
+                            width: (size.width - 3) / 3,
+                            height: (size.height - 3) / 3,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: NetworkImage(searchImages[index]),
+                                  fit: BoxFit.cover),
+                            ),
+                          );
+                        })),
+                    Text('oi', style: TextStyle(color: white)),
+                  ],
+                ),
               ),
             ],
           ),

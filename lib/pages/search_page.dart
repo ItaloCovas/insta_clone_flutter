@@ -25,7 +25,7 @@ class _SearchPageState extends State<SearchPage> {
           SafeArea(
             child: Row(
               children: <Widget>[
-                SizedBox(width: 15),
+                const SizedBox(width: 15),
                 Container(
                   width: size.width - 30,
                   height: 45,
@@ -39,17 +39,17 @@ class _SearchPageState extends State<SearchPage> {
                       prefixIcon:
                           Icon(Icons.search, color: white.withOpacity(0.3)),
                     ),
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: white,
                     ),
                     cursorColor: white.withOpacity(0.3),
                   ),
                 ),
-                SizedBox(width: 15),
+                const SizedBox(width: 15),
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           SingleChildScrollView(
@@ -67,7 +67,7 @@ class _SearchPageState extends State<SearchPage> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           Wrap(
@@ -76,7 +76,7 @@ class _SearchPageState extends State<SearchPage> {
             children: List.generate(searchImages.length, (index) {
               return Container(
                 width: (size.width - 3) / 3,
-                height: (size.width - 3) / 3,
+                height: (size.height - 3) / 3,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       image: NetworkImage(searchImages[index]),

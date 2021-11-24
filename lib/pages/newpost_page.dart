@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
@@ -15,7 +14,7 @@ class _NewPostState extends State<NewPost> {
   XFile? imagem;
   Size? size;
 
-  @override
+  
   void cameraState() {
     _loadCameras();
   }

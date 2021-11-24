@@ -34,15 +34,15 @@ class NotificationItem extends StatelessWidget {
                       fit: BoxFit.cover),
                 ),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               RichText(
                 text: TextSpan(
                   children: [
                     TextSpan(
-              text: "$name",
+              text: name,
               style:
-                  TextStyle(fontSize: 13, fontWeight: FontWeight.w700)),
-          TextSpan(
+                  const TextStyle(fontSize: 13, fontWeight: FontWeight.w700)),
+          const TextSpan(
               text: " curtiu sua foto.",
               style:
                   TextStyle(fontSize: 13, fontWeight: FontWeight.w400)),

@@ -44,14 +44,14 @@ class StoryItem extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10.0,
           ),
           SizedBox(
             width: 70,
             child: Text(name,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                 ), textAlign: TextAlign.center)
           ),

@@ -26,8 +26,6 @@ class _HomePageState extends State<HomePage> {
     Navigator.of(context).pop();
   }
 
-  String _dropdownValuee = 'framework.digital';
-
 
   @override
   Widget build(BuildContext context) {
@@ -57,11 +55,11 @@ class _HomePageState extends State<HomePage> {
 
   Widget body() {
     List<Widget> pages = [
-      MainPage(),
-      SearchPage(),
-      NewPost(),
-      ActivityPage(),
-      ProfilePage(),
+      const MainPage(),
+      const SearchPage(),
+      const NewPost(),
+      const ActivityPage(),
+      const ProfilePage(),
     ];
 
     return IndexedStack(
@@ -73,7 +71,7 @@ class _HomePageState extends State<HomePage> {
   getAppBar() {
     if (pageIndex == 0) {
       return AppBar(
-        backgroundColor: Color(0xFF131313),
+        backgroundColor: const Color(0xFF131313),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
@@ -81,7 +79,7 @@ class _HomePageState extends State<HomePage> {
               "assets/images/camera_icon.svg",
               width: 30.0,
             ),
-            Text(
+            const Text(
               "Instagram",
               style: TextStyle(fontFamily: "Billabong", fontSize: 35),
             ),
@@ -96,21 +94,21 @@ class _HomePageState extends State<HomePage> {
       return null;
     } else if (pageIndex == 2) {
       return AppBar(
-        backgroundColor: Color(0xFF131313),
-        title: Text('Nova Publicação'),
+        backgroundColor: const Color(0xFF131313),
+        title: const Text('Nova Publicação'),
       );
     } else if (pageIndex == 3) {
       return AppBar(
-        backgroundColor: Color(0xFF131313),
-        title: Text('Atividade'),
+        backgroundColor: const Color(0xFF131313),
+        title: const Text('Atividade'),
       );
     } else {
       return AppBar(
-        backgroundColor: Color(0xFF131313),
+        backgroundColor: const Color(0xFF131313),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Row(children: [
+            Row(children: const [
                 Text('framework.digital', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18)),
                 Icon(Icons.keyboard_arrow_down),
             ],),
@@ -143,7 +141,7 @@ class _HomePageState extends State<HomePage> {
     return Container(
       width: double.infinity,
       height: 60.0,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Color(0xFF131313),
       ),
       child: Padding(

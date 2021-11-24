@@ -8,7 +8,7 @@ class PostItem extends StatelessWidget {
   final String name;
   final String postImg;
   final String caption;
-  final isLoved;
+  final bool isLoved;
   final String likedBy;
   final String viewCount;
   final String dayAgo;
@@ -45,12 +45,12 @@ class PostItem extends StatelessWidget {
                                     image: NetworkImage(profileImg),
                                     fit: BoxFit.cover)),
                           ),
-                           SizedBox(
+                           const SizedBox(
                             width: 6,
                           ),
                           Text(
                             name,
-                            style:  TextStyle(
+                            style: const TextStyle(
                                 color: white,
                                 fontSize: 15,
                                 fontWeight: FontWeight.w500),
@@ -60,14 +60,14 @@ class PostItem extends StatelessWidget {
                     ],
                   ),
                 ),
-                 Icon(
+                 const Icon(
                   LineIcons.verticalEllipsis,
                   color: white,
                 )
               ],
             ),
           ),
-           SizedBox(
+           const SizedBox(
             height: 10,
           ),
           Container(
@@ -77,7 +77,7 @@ class PostItem extends StatelessWidget {
                     image: NetworkImage(postImg),
                     fit: BoxFit.cover)),
           ),
-           SizedBox(
+           const SizedBox(
             height: 10,
           ),
           Padding(
@@ -94,14 +94,14 @@ class PostItem extends StatelessWidget {
                       "assets/images/love_icon.svg",
                       width: 27,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     SvgPicture.asset(
                       "assets/images/comment_icon.svg",
                       width: 27,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     SvgPicture.asset(
@@ -117,7 +117,32 @@ class PostItem extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
+            height: 12,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 15, right: 15),
+            child: RichText(
+                text: TextSpan(children: [
+              const TextSpan(
+                  text: "Curtido por",
+                  style:
+                      TextStyle(fontSize: 15, fontWeight: FontWeight.w400)),
+              TextSpan(
+                  text: " $likedBy",
+                  style:
+                      const TextStyle(fontSize: 15, fontWeight: FontWeight.w700)),
+              const TextSpan(
+                  text: " e",
+                  style:
+                      TextStyle(fontSize: 15, fontWeight: FontWeight.w400)),
+              const TextSpan(
+                  text: " outras pessoas",
+                  style:
+                      TextStyle(fontSize: 15, fontWeight: FontWeight.w700)),
+            ])),
+          ),
+          const SizedBox(
             height: 12,
           ),
           Padding(
@@ -125,45 +150,20 @@ class PostItem extends StatelessWidget {
             child: RichText(
                 text: TextSpan(children: [
               TextSpan(
-                  text: "Curtido por",
+                  text: name,
                   style:
-                      TextStyle(fontSize: 15, fontWeight: FontWeight.w400)),
+                      const TextStyle(fontSize: 15, fontWeight: FontWeight.w700)),
               TextSpan(
-                  text: " $likedBy",
+                  text: caption,
                   style:
-                      TextStyle(fontSize: 15, fontWeight: FontWeight.w700)),
-              TextSpan(
-                  text: " e",
-                  style:
-                      TextStyle(fontSize: 15, fontWeight: FontWeight.w400)),
-              TextSpan(
-                  text: " outras pessoas",
-                  style:
-                      TextStyle(fontSize: 15, fontWeight: FontWeight.w700)),
+                      const TextStyle(fontSize: 15, fontWeight: FontWeight.w400)),
             ])),
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           Padding(
-            padding: EdgeInsets.only(left: 15, right: 15),
-            child: RichText(
-                text: TextSpan(children: [
-              TextSpan(
-                  text: "$name",
-                  style:
-                      TextStyle(fontSize: 15, fontWeight: FontWeight.w700)),
-              TextSpan(
-                  text: "$caption",
-                  style:
-                      TextStyle(fontSize: 15, fontWeight: FontWeight.w400)),
-            ])),
-          ),
-          SizedBox(
-            height: 12,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 15, right: 15),
+            padding: const EdgeInsets.only(left: 15, right: 15),
             child: Text(
               "Ver todos os $viewCount comentários",
               style: TextStyle(
@@ -172,11 +172,11 @@ class PostItem extends StatelessWidget {
                   fontWeight: FontWeight.w400),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           Padding(
-              padding: EdgeInsets.only(left: 15, right: 15),
+              padding: const EdgeInsets.only(left: 15, right: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -191,7 +191,7 @@ class PostItem extends StatelessWidget {
                                 image: NetworkImage(profileImg),
                                 fit: BoxFit.cover)),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 15,
                       ),
                       Text(
@@ -205,21 +205,21 @@ class PostItem extends StatelessWidget {
                   ),
                   Row(
                     children: <Widget>[
-                      SizedBox(
+                      const SizedBox(
                         width: 15,
                       ),
-                      Text(
+                      const Text(
                         "❤️",
                         style: TextStyle(fontSize: 12),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 13,
                       ),
-                      Text(
+                      const Text(
                         "😊",
                         style: TextStyle(fontSize: 12),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       Icon(
@@ -231,9 +231,9 @@ class PostItem extends StatelessWidget {
                   )
                 ],
               )),
-              SizedBox(height: 12.0,),
+              const SizedBox(height: 12.0,),
               Padding(
-                padding: EdgeInsets.only(left: 15, right: 15),
+                padding: const EdgeInsets.only(left: 15, right: 15),
                 child: Text(
                         "há 1 dia",
                         style: TextStyle(
