@@ -28,7 +28,7 @@ class _SearchPageState extends State<SearchPage> {
                 const SizedBox(width: 15),
                 Container(
                   width: size.width - 30,
-                  height: 45,
+                  height: 30,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: textFieldBackground,

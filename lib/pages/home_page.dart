@@ -19,9 +19,6 @@ class _HomePageState extends State<HomePage> {
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +35,7 @@ class _HomePageState extends State<HomePage> {
     List<Widget> pages = [
       const MainPage(),
       const SearchPage(),
-      const NewPost(),
+      NewPost(),
       const ActivityPage(),
       const ProfilePage(),
     ];
@@ -49,8 +46,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  
-
   getAppBar() {
     if (pageIndex == 0) {
       return AppBar(
@@ -58,9 +53,12 @@ class _HomePageState extends State<HomePage> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            SvgPicture.asset(
-              "assets/images/camera_icon.svg",
-              width: 30.0,
+            GestureDetector(
+              onTap: () {},
+              child: SvgPicture.asset(
+                "assets/images/camera_icon.svg",
+                width: 30.0,
+              ),
             ),
             const Text(
               "Instagram",
@@ -93,22 +91,26 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Row(
               children: [
-                Text('framework.digital', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18)),
+                Text('framework.digital',
+                    style:
+                        TextStyle(fontWeight: FontWeight.w700, fontSize: 18)),
                 Icon(Icons.keyboard_arrow_down),
-            ],),
+              ],
+            ),
           ],
         ),
         actions: [
           Row(
-              children: [
+            children: [
               SvgPicture.asset("assets/images/upload_icon.svg", width: 22),
-            IconButton(
-                  onPressed: showMenu,
-                  icon: Icon(Icons.menu),
-                  color: white,
-                  padding: EdgeInsets.all(0),
-                ),
-            ],)
+              IconButton(
+                onPressed: showMenu,
+                icon: Icon(Icons.menu),
+                color: white,
+                padding: EdgeInsets.all(0),
+              ),
+            ],
+          )
         ],
       );
     }
@@ -169,108 +171,113 @@ class _HomePageState extends State<HomePage> {
     showModalBottomSheet(
         context: context,
         builder: (BuildContext context) {
-         return SingleChildScrollView(
-           child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: <Widget>[
-                  Container(
-                      height: 300,
-                      color: Colors.black,
-                      child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.grey.shade900,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Stack(
-                            alignment: Alignment(0, 0),
-                            overflow: Overflow.visible,
-                            children: <Widget>[
-                              Positioned(
-                                child: ListView(
-                                  physics: NeverScrollableScrollPhysics(),
-                                  children: <Widget>[
-                                    ListTile(
-                                      visualDensity: VisualDensity(horizontal: 0, vertical: -2),
-                                      title: Text(
-                                        "Configurações",
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      leading: Icon(
-                                        Icons.settings,
-                                        color: Colors.white,
-                                      ),
-                                      onTap: () {},
+          return SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: <Widget>[
+                Container(
+                    height: 300,
+                    color: Colors.black,
+                    child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade900,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Stack(
+                          alignment: Alignment(0, 0),
+                          overflow: Overflow.visible,
+                          children: <Widget>[
+                            Positioned(
+                              child: ListView(
+                                physics: NeverScrollableScrollPhysics(),
+                                children: <Widget>[
+                                  ListTile(
+                                    visualDensity: VisualDensity(
+                                        horizontal: 0, vertical: -2),
+                                    title: Text(
+                                      "Configurações",
+                                      style: TextStyle(color: Colors.white),
                                     ),
-                                    ListTile(
-                                      visualDensity: VisualDensity(horizontal: 0, vertical: -2),
-                                      title: Text(
-                                        "Itens Arquivados",
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      leading: Icon(
-                                        Icons.restore,
-                                        color: Colors.white,
-                                      ),
-                                      onTap: () {},
+                                    leading: Icon(
+                                      Icons.settings,
+                                      color: Colors.white,
                                     ),
-                                    ListTile(
-                                      visualDensity: VisualDensity(horizontal: 0, vertical: -2),
-                                      title: Text(
-                                        "Sua atividade",
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      leading: Icon(
-                                        Icons.data_usage,
-                                        color: Colors.white,
-                                      ),
-                                      onTap: () {},
+                                    onTap: () {},
+                                  ),
+                                  ListTile(
+                                    visualDensity: VisualDensity(
+                                        horizontal: 0, vertical: -2),
+                                    title: Text(
+                                      "Itens Arquivados",
+                                      style: TextStyle(color: Colors.white),
                                     ),
-                                    ListTile(
-                                      visualDensity: VisualDensity(horizontal: 0, vertical: -2),
-                                      title: Text(
-                                        "Código QR",
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      leading: Icon(
-                                        Icons.qr_code_scanner_rounded,
-                                        color: Colors.white,
-                                      ),
-                                      onTap: () {},
+                                    leading: Icon(
+                                      Icons.restore,
+                                      color: Colors.white,
                                     ),
-                                    ListTile(
-                                      visualDensity: VisualDensity(horizontal: 0, vertical: -2),
-                                      title: Text(
-                                        "Salvos",
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      leading: Icon(
-                                        Icons.bookmark_border_outlined,
-                                        color: Colors.white,
-                                      ),
-                                      onTap: () {},
+                                    onTap: () {},
+                                  ),
+                                  ListTile(
+                                    visualDensity: VisualDensity(
+                                        horizontal: 0, vertical: -2),
+                                    title: Text(
+                                      "Sua atividade",
+                                      style: TextStyle(color: Colors.white),
                                     ),
-                                    ListTile(
-                                      visualDensity: VisualDensity(horizontal: 0, vertical: -2),
-                                      title: Text(
-                                        "COVID-19: Central de Informações",
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      leading: Icon(
-                                        Icons.coronavirus_outlined,
-                                        color: Colors.white,
-                                      ),
-                                      onTap: () {},
+                                    leading: Icon(
+                                      Icons.data_usage,
+                                      color: Colors.white,
                                     ),
-                                  ],
-                                ),
-                              )
-                            ],
-                          ))),
-                ],
-              ),
-         );
+                                    onTap: () {},
+                                  ),
+                                  ListTile(
+                                    visualDensity: VisualDensity(
+                                        horizontal: 0, vertical: -2),
+                                    title: Text(
+                                      "Código QR",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    leading: Icon(
+                                      Icons.qr_code_scanner_rounded,
+                                      color: Colors.white,
+                                    ),
+                                    onTap: () {},
+                                  ),
+                                  ListTile(
+                                    visualDensity: VisualDensity(
+                                        horizontal: 0, vertical: -2),
+                                    title: Text(
+                                      "Salvos",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    leading: Icon(
+                                      Icons.bookmark_border_outlined,
+                                      color: Colors.white,
+                                    ),
+                                    onTap: () {},
+                                  ),
+                                  ListTile(
+                                    visualDensity: VisualDensity(
+                                        horizontal: 0, vertical: -2),
+                                    title: Text(
+                                      "COVID-19: Central de Informações",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    leading: Icon(
+                                      Icons.coronavirus_outlined,
+                                      color: Colors.white,
+                                    ),
+                                    onTap: () {},
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ))),
+              ],
+            ),
+          );
         });
   }
 }
-

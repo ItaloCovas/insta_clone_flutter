@@ -302,7 +302,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         crossAxisCount: 3,
                         children: List.generate(profilePostImg.length, (index) {
                           var size = MediaQuery.of(context).size;
-              
+
                           return Container(
                             width: (size.width - 3) / 3,
                             height: (size.height - 3) / 3,
@@ -321,7 +321,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         crossAxisCount: 3,
                         children: List.generate(taggedImgs.length, (index) {
                           var size = MediaQuery.of(context).size;
-              
+
                           return Container(
                             width: (size.width - 3) / 3,
                             height: (size.height - 3) / 3,

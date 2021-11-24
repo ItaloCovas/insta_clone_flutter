@@ -1,33 +1,18 @@
-
 import 'package:flutter/material.dart';
+import 'package:insta_clone/screens/camera_screen.dart';
+import 'package:image_picker/image_picker.dart';
 
-class NewPost extends StatefulWidget {
-  const NewPost({Key? key}) : super(key: key);
+final picker = ImagePicker();
 
-  @override
-  _NewPostState createState() => _NewPostState();
-}
+class NewPost extends StatelessWidget {
+  final pickedFile = picker.getImage(
+      source: ImageSource.camera, maxWidth: 800, imageQuality: 50);
 
-class _NewPostState extends State<NewPost> {
-  List<Camera> cameras = [];
-  CameraController? cameraController;
-  XFile? imagem;
-  Size? size;
+  NewPost({Key? key}) : super(key: key);
 
-  
-  void cameraState() {
-    _loadCameras();
-  }
-
-  _loadCameras() async {}
+  Future Getcamera() async {}
   @override
   Widget build(BuildContext context) {
     return Container();
   }
 }
-
-class XFile {}
-
-class CameraController {}
-
-class Camera {}

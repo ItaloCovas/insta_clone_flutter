@@ -30,8 +30,8 @@ class _MainPageState extends State<MainPage> {
               child: Row(
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.only(
-                        right: 15, left: 15, bottom: 0),
+                    padding:
+                        const EdgeInsets.only(right: 15, left: 15, bottom: 0),
                     child: Column(
                       children: <Widget>[
                         Container(
@@ -92,19 +92,18 @@ class _MainPageState extends State<MainPage> {
             color: white.withOpacity(0.3),
           ),
           Column(
-            children: List.generate(posts.length, (index) {
-              return PostItem(
-                postImg: posts[index]['postImg'],
-                profileImg: posts[index]['profileImg'],
-                name: posts[index]['name'],
-                caption: posts[index]['caption'],
-                isLoved: posts[index]['isLoved'],
-                viewCount: posts[index]['commentCount'],
-                likedBy: posts[index]['likedBy'],
-                dayAgo: posts[index]['timeAgo'],
-              );
-            })
-          ),
+              children: List.generate(posts.length, (index) {
+            return PostItem(
+              postImg: posts[index]['postImg'],
+              profileImg: posts[index]['profileImg'],
+              name: posts[index]['name'],
+              caption: posts[index]['caption'],
+              isLoved: posts[index]['isLoved'],
+              viewCount: posts[index]['commentCount'],
+              likedBy: posts[index]['likedBy'],
+              dayAgo: posts[index]['timeAgo'],
+            );
+          })),
         ],
       ),
     );

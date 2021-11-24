@@ -36,8 +36,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg:
   line_icons:
+  image_picker: ^0.8.4+4
   
 camera: ^0.9.4+5
+image_picker: ^0.8.4+4
 
 dev_dependencies:
   flutter_test:
@@ -98,4 +100,4 @@ flutter:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/icons/instagram.png"
+  image_path: "assets/icons/icon.png"

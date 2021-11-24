@@ -16,6 +16,9 @@ class _LoginPageState extends State<LoginPage> {
 
   bool? isCompleted;
 
+  get page => null;
+
+//
   void _nameChanged(String text) {
     setState(() {
       if (text.isNotEmpty) {
@@ -105,7 +108,8 @@ class _LoginPageState extends State<LoginPage> {
                         enabledBorder: InputBorder.none,
                         errorBorder: InputBorder.none,
                         disabledBorder: InputBorder.none,
-                        hintText: 'Número de telefone, email ou nome de usuario',
+                        hintText:
+                            'Número de telefone, email ou nome de usuario',
                       ),
                     ),
                   ),
@@ -152,7 +156,8 @@ class _LoginPageState extends State<LoginPage> {
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (context) => const HomePage()));
+                          // ignore: prefer_const_constructors
+                          builder: (context) => HomePage()));
                     },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
@@ -163,8 +168,9 @@ class _LoginPageState extends State<LoginPage> {
                     child: Text(
                       "Entrar",
                       style: TextStyle(
-                          color:
-                              isCompleted == true ? Colors.white : Colors.white54,
+                          color: isCompleted == true
+                              ? Colors.white
+                              : Colors.white54,
                           fontSize: 20.0),
                     ),
                   ),
@@ -178,9 +184,11 @@ class _LoginPageState extends State<LoginPage> {
                       Flexible(
                         child: RichText(
                           text: TextSpan(
-                            style: const TextStyle(color: Colors.grey, fontSize: 14.0),
+                            style: const TextStyle(
+                                color: Colors.grey, fontSize: 14.0),
                             children: <TextSpan>[
-                              const TextSpan(text: 'Esqueceu seus dados de login?'),
+                              const TextSpan(
+                                  text: 'Esqueceu seus dados de login?'),
                               TextSpan(
                                   text: ' Obtenha ajuda para entrar.',
                                   style: TextStyle(
@@ -188,8 +196,7 @@ class _LoginPageState extends State<LoginPage> {
                                     fontWeight: FontWeight.w700,
                                   ),
                                   recognizer: TapGestureRecognizer()
-                                    ..onTap = () {
-                                    }),
+                                    ..onTap = () {}),
                             ],
                           ),
                         ),
@@ -287,9 +294,7 @@ class _DemoBottomAppBar extends StatelessWidget {
                           color: Colors.blue[700],
                           fontWeight: FontWeight.w700,
                         ),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                          }),
+                        recognizer: TapGestureRecognizer()..onTap = () {}),
                   ],
                 ),
               ),
