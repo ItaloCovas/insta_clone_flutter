@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:insta_clone/constant/search_json.dart';
+import 'package:insta_clone/constant/profile_json.dart';
 import 'package:insta_clone/constant/story_json.dart';
 import 'package:insta_clone/theme/colors.dart';
 
@@ -285,7 +285,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                     Tab(
                         icon: Icon(
-                      Icons.person,
+                      Icons.assignment_ind_outlined,
                     )),
                   ],
                 ),
@@ -300,7 +300,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         crossAxisSpacing: 3,
                         mainAxisSpacing: 3,
                         crossAxisCount: 3,
-                        children: List.generate(searchImages.length, (index) {
+                        children: List.generate(profilePostImg.length, (index) {
                           var size = MediaQuery.of(context).size;
               
                           return Container(
@@ -308,12 +308,30 @@ class _ProfilePageState extends State<ProfilePage> {
                             height: (size.height - 3) / 3,
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: NetworkImage(searchImages[index]),
+                                  image: NetworkImage(profilePostImg[index]),
                                   fit: BoxFit.cover),
                             ),
                           );
                         })),
-                    Text('oi', style: TextStyle(color: white)),
+                    GridView.count(
+                        primary: false,
+                        padding: const EdgeInsets.all(0),
+                        crossAxisSpacing: 3,
+                        mainAxisSpacing: 3,
+                        crossAxisCount: 3,
+                        children: List.generate(taggedImgs.length, (index) {
+                          var size = MediaQuery.of(context).size;
+              
+                          return Container(
+                            width: (size.width - 3) / 3,
+                            height: (size.height - 3) / 3,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: NetworkImage(taggedImgs[index]),
+                                  fit: BoxFit.cover),
+                            ),
+                          );
+                        })),
                   ],
                 ),
               ),

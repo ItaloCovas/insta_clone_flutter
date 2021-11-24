@@ -4,6 +4,7 @@ import 'package:insta_clone/pages/activity_page.dart';
 import 'package:insta_clone/pages/main_page.dart';
 import 'package:insta_clone/pages/newpost_page.dart';
 import 'package:insta_clone/pages/search_page.dart';
+import 'package:insta_clone/theme/colors.dart';
 import 'profile_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,13 +19,7 @@ class _HomePageState extends State<HomePage> {
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  void _openEndDrawer() {
-    _scaffoldKey.currentState!.openEndDrawer();
-  }
 
-  void _closeEndDrawer() {
-    Navigator.of(context).pop();
-  }
 
 
   @override
@@ -32,20 +27,6 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: getAppBar(),
-      endDrawer: (pageIndex == 4) ? Drawer(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const Text('This is the Drawer'),
-              ElevatedButton(
-                onPressed: _closeEndDrawer,
-                child: const Text('Close Drawer'),
-              ),
-            ],
-          ),
-        ),
-      ) : null,
       backgroundColor: Colors.black,
       body: body(),
       resizeToAvoidBottomInset: false,
@@ -67,6 +48,8 @@ class _HomePageState extends State<HomePage> {
       children: pages,
     );
   }
+
+  
 
   getAppBar() {
     if (pageIndex == 0) {
@@ -108,13 +91,25 @@ class _HomePageState extends State<HomePage> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Row(children: const [
+            Row(
+              children: [
                 Text('framework.digital', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18)),
                 Icon(Icons.keyboard_arrow_down),
             ],),
-            SvgPicture.asset("assets/images/upload_icon.svg", width: 22),
           ],
         ),
+        actions: [
+          Row(
+              children: [
+              SvgPicture.asset("assets/images/upload_icon.svg", width: 22),
+            IconButton(
+                  onPressed: showMenu,
+                  icon: Icon(Icons.menu),
+                  color: white,
+                  padding: EdgeInsets.all(0),
+                ),
+            ],)
+        ],
       );
     }
   }
@@ -169,4 +164,113 @@ class _HomePageState extends State<HomePage> {
       pageIndex = index;
     });
   }
+
+  showMenu() {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+         return SingleChildScrollView(
+           child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  Container(
+                      height: 300,
+                      color: Colors.black,
+                      child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade900,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Stack(
+                            alignment: Alignment(0, 0),
+                            overflow: Overflow.visible,
+                            children: <Widget>[
+                              Positioned(
+                                child: ListView(
+                                  physics: NeverScrollableScrollPhysics(),
+                                  children: <Widget>[
+                                    ListTile(
+                                      visualDensity: VisualDensity(horizontal: 0, vertical: -2),
+                                      title: Text(
+                                        "Configurações",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      leading: Icon(
+                                        Icons.settings,
+                                        color: Colors.white,
+                                      ),
+                                      onTap: () {},
+                                    ),
+                                    ListTile(
+                                      visualDensity: VisualDensity(horizontal: 0, vertical: -2),
+                                      title: Text(
+                                        "Itens Arquivados",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      leading: Icon(
+                                        Icons.restore,
+                                        color: Colors.white,
+                                      ),
+                                      onTap: () {},
+                                    ),
+                                    ListTile(
+                                      visualDensity: VisualDensity(horizontal: 0, vertical: -2),
+                                      title: Text(
+                                        "Sua atividade",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      leading: Icon(
+                                        Icons.data_usage,
+                                        color: Colors.white,
+                                      ),
+                                      onTap: () {},
+                                    ),
+                                    ListTile(
+                                      visualDensity: VisualDensity(horizontal: 0, vertical: -2),
+                                      title: Text(
+                                        "Código QR",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      leading: Icon(
+                                        Icons.qr_code_scanner_rounded,
+                                        color: Colors.white,
+                                      ),
+                                      onTap: () {},
+                                    ),
+                                    ListTile(
+                                      visualDensity: VisualDensity(horizontal: 0, vertical: -2),
+                                      title: Text(
+                                        "Salvos",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      leading: Icon(
+                                        Icons.bookmark_border_outlined,
+                                        color: Colors.white,
+                                      ),
+                                      onTap: () {},
+                                    ),
+                                    ListTile(
+                                      visualDensity: VisualDensity(horizontal: 0, vertical: -2),
+                                      title: Text(
+                                        "COVID-19: Central de Informações",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      leading: Icon(
+                                        Icons.coronavirus_outlined,
+                                        color: Colors.white,
+                                      ),
+                                      onTap: () {},
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ))),
+                ],
+              ),
+         );
+        });
+  }
 }
+
