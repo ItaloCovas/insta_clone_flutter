@@ -66,3 +66,11 @@ List stories = [
     "name": "niveabrasil"
   },
 ];
+
+List receivedDeclinedCalls = [
+  "Perdida • 25 de novembro",
+  "Recebida • 23 de outubro",
+  "Perdida • 01 de outubro",
+  "Recebida • 10 de setembro",
+  "Perdida • 02 de setembro",
+];
