@@ -4,6 +4,8 @@ import 'package:insta_clone/theme/colors.dart';
 import 'package:insta_clone/widgets/call_item.dart';
 import 'package:insta_clone/widgets/chat_item.dart';
 
+import 'camera_page.dart';
+
 class ChatPage extends StatefulWidget {
   const ChatPage({Key? key}) : super(key: key);
 
@@ -46,7 +48,13 @@ de vídeo com os amigos
             padding: const EdgeInsets.only(right: 15.0),
             child: Row(
               children: <Widget>[
-                Icon(Icons.camera_alt_outlined, color: white),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => CameraPage()));
+                  },
+                  child: Icon(Icons.camera_alt_outlined, color: white),
+                ),
                 SizedBox(width: 15),
                 Icon(Icons.edit, color: white),
               ],
@@ -159,13 +167,15 @@ de vídeo com os amigos
                           Padding(
                             padding: const EdgeInsets.only(left: 0, top: 15),
                             child: Column(
-                              children: List.generate(stories.length - 5, (index) {
-                              return CallItem(
-                                img: stories[index]['img'],
-                                name: stories[index]['name'],
-                                receivedDeclinedCalls: receivedDeclinedCalls[index],
-                              );
-                            }),
+                              children:
+                                  List.generate(stories.length - 5, (index) {
+                                return CallItem(
+                                  img: stories[index]['img'],
+                                  name: stories[index]['name'],
+                                  receivedDeclinedCalls:
+                                      receivedDeclinedCalls[index],
+                                );
+                              }),
                             ),
                           ),
                         ],
@@ -181,4 +191,3 @@ de vídeo com os amigos
     );
   }
 }
-

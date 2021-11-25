@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:insta_clone/pages/activity_page.dart';
+import 'package:insta_clone/pages/camera_page.dart';
 import 'package:insta_clone/pages/chat_page.dart';
 import 'package:insta_clone/pages/main_page.dart';
 import 'package:insta_clone/pages/newpost_page.dart';
@@ -55,7 +56,10 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CameraPage()));
+              },
               child: SvgPicture.asset(
                 "assets/images/camera_icon.svg",
                 width: 30.0,
@@ -71,7 +75,8 @@ class _HomePageState extends State<HomePage> {
                 width: 30,
               ),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ChatPage()));
               },
             ),
           ],

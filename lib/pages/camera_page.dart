@@ -5,14 +5,14 @@ import 'package:image_picker/image_picker.dart';
 
 final picker = ImagePicker();
 
-class NewPost extends StatefulWidget {
-  const NewPost({Key? key}) : super(key: key);
+class CameraPage extends StatefulWidget {
+  const CameraPage({Key? key}) : super(key: key);
 
   @override
-  _NewPostState createState() => _NewPostState();
+  _CameraPageState createState() => _CameraPageState();
 }
 
-class _NewPostState extends State<NewPost> {
+class _CameraPageState extends State<CameraPage> {
   File? _image;
   Future getImagefromcamera() async {
     final XFile? photo = await _picker.pickImage(source: ImageSource.camera);
