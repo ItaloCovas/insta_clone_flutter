@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:insta_clone/pages/activity_page.dart';
+import 'package:insta_clone/pages/chat_page.dart';
 import 'package:insta_clone/pages/main_page.dart';
 import 'package:insta_clone/pages/newpost_page.dart';
 import 'package:insta_clone/pages/search_page.dart';
@@ -64,10 +65,15 @@ class _HomePageState extends State<HomePage> {
               "Instagram",
               style: TextStyle(fontFamily: "Billabong", fontSize: 35),
             ),
-            SvgPicture.asset(
-              "assets/images/message_icon.svg",
-              width: 30,
-            )
+            GestureDetector(
+              child: SvgPicture.asset(
+                "assets/images/message_icon.svg",
+                width: 30,
+              ),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage()));
+              },
+            ),
           ],
         ),
       );

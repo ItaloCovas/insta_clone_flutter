@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:insta_clone/pages/login_page.dart';
-import 'package:insta_clone/screens/camera_screen.dart';
 
 void main() async {
   runApp(const MyApp());
