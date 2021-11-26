@@ -3,8 +3,10 @@ import 'package:insta_clone/constant/story_json.dart';
 import 'package:insta_clone/theme/colors.dart';
 import 'package:insta_clone/widgets/call_item.dart';
 import 'package:insta_clone/widgets/chat_item.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io' show File;
 
-import 'camera_page.dart';
+final picker = ImagePicker();
 
 class ChatPage extends StatefulWidget {
   const ChatPage({Key? key}) : super(key: key);
@@ -14,6 +16,16 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
+  File? _image;
+  Future getImagefromcamera() async {
+    final XFile? photo = await _picker.pickImage(source: ImageSource.camera);
+    final pickedFile = await picker.getImage(
+        source: ImageSource.camera, maxWidth: 800, imageQuality: 50);
+    setState(() {
+      _image = _image;
+    });
+  }
+
   final String texto = '''Envie um link  para fazer uma ligação
 de vídeo com os amigos
   ''';
@@ -50,8 +62,7 @@ de vídeo com os amigos
               children: <Widget>[
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => CameraPage()));
+                    getImagefromcamera();
                   },
                   child: Icon(Icons.camera_alt_outlined, color: white),
                 ),
@@ -190,4 +201,8 @@ de vídeo com os amigos
       ),
     );
   }
+}
+
+class _picker {
+  static pickImage({required ImageSource source}) {}
 }

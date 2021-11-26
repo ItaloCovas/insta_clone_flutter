@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:insta_clone/pages/activity_page.dart';
-import 'package:insta_clone/pages/camera_page.dart';
+
 import 'package:insta_clone/pages/chat_page.dart';
 import 'package:insta_clone/pages/main_page.dart';
 import 'package:insta_clone/pages/newpost_page.dart';
 import 'package:insta_clone/pages/search_page.dart';
 import 'package:insta_clone/theme/colors.dart';
 import 'profile_page.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io' show File;
+
+final picker = ImagePicker();
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,6 +21,16 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  File? _image;
+  Future getImagefromcamera() async {
+    final XFile? photo = await _picker.pickImage(source: ImageSource.camera);
+    final pickedFile = await picker.getImage(
+        source: ImageSource.camera, maxWidth: 800, imageQuality: 50);
+    setState(() {
+      _image = _image;
+    });
+  }
+
   int pageIndex = 0;
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -57,13 +71,10 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CameraPage()));
+                getImagefromcamera();
               },
-              child: SvgPicture.asset(
-                "assets/images/camera_icon.svg",
-                width: 30.0,
-              ),
+              child: SvgPicture.asset("assets/images/camera_icon.svg",
+                  width: 30.0),
             ),
             const Text(
               "Instagram",
@@ -291,4 +302,8 @@ class _HomePageState extends State<HomePage> {
           );
         });
   }
+}
+
+class _picker {
+  static pickImage({required ImageSource source}) {}
 }
