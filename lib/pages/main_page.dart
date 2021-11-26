@@ -2,9 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:insta_clone/constant/post_json.dart';
 import 'package:insta_clone/constant/story_json.dart';
+import 'package:insta_clone/screens/story_view.dart';
 import 'package:insta_clone/theme/colors.dart';
 import 'package:insta_clone/widgets/post_item.dart';
 import 'package:insta_clone/widgets/story_item.dart';
+
+import '../constant/post_json.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -78,9 +81,14 @@ class _MainPageState extends State<MainPage> {
                   ),
                   Row(
                     children: List.generate(stories.length, (index) {
-                      return StoryItem(
-                        img: stories[index]['img'],
-                        name: stories[index]['name'],
+                      return InkWell(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => StoryPageView()));
+                        },
+                        child: StoryItem(
+                          img: stories[index]['img'],
+                          name: stories[index]['name'],
+                        ),
                       );
                     }),
                   ),
