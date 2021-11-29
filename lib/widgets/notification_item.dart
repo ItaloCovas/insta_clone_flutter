@@ -28,7 +28,7 @@ class NotificationItem extends StatelessWidget {
                     width: 2,
                   ),
                   image: DecorationImage(
-                      image: NetworkImage(
+                      image: AssetImage(
                         img,
                       ),
                       fit: BoxFit.cover),
@@ -60,7 +60,7 @@ class NotificationItem extends StatelessWidget {
             height: 45,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage(profile),
+                image: AssetImage(profile),
                 fit: BoxFit.cover,
               ),
             ),

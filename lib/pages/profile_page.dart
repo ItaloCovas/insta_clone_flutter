@@ -35,7 +35,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               width: 2,
                             ),
                             image: DecorationImage(
-                              image: NetworkImage(profile),
+                              image: AssetImage(profile),
                               fit: BoxFit.cover,
                             ))),
                     const SizedBox(width: 20),
@@ -308,7 +308,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             height: (size.height - 3) / 3,
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: NetworkImage(profilePostImg[index]),
+                                  image: AssetImage(profilePostImg[index]),
                                   fit: BoxFit.cover),
                             ),
                           );
@@ -327,7 +327,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             height: (size.height - 3) / 3,
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: NetworkImage(taggedImgs[index]),
+                                  image: AssetImage(taggedImgs[index]),
                                   fit: BoxFit.cover),
                             ),
                           );

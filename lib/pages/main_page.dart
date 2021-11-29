@@ -48,7 +48,7 @@ class _MainPageState extends State<MainPage> {
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     image: DecorationImage(
-                                        image: NetworkImage(profile),
+                                        image: AssetImage(profile),
                                         fit: BoxFit.cover)),
                               ),
                               Positioned(

@@ -42,7 +42,7 @@ class PostItem extends StatelessWidget {
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
-                                    image: NetworkImage(profileImg),
+                                    image: AssetImage(profileImg),
                                     fit: BoxFit.cover)),
                           ),
                            const SizedBox(
@@ -188,7 +188,7 @@ class PostItem extends StatelessWidget {
                         decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             image: DecorationImage(
-                                image: NetworkImage(profileImg),
+                                image: AssetImage(profileImg),
                                 fit: BoxFit.cover)),
                       ),
                       const SizedBox(

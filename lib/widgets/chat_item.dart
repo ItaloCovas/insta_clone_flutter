@@ -25,7 +25,7 @@ class ChatItem extends StatelessWidget {
                 width: 2,
               ),
               image: DecorationImage(
-                  image: NetworkImage(
+                  image: AssetImage(
                     img,
                   ),
                   fit: BoxFit.cover),

@@ -36,8 +36,8 @@ class StoryItem extends StatelessWidget {
                     width: 2,
                   ),
                   image: DecorationImage(
-                      image: NetworkImage(
-                        img,
+                      image: AssetImage(
+                        img
                       ),
                       fit: BoxFit.cover),
                 ),

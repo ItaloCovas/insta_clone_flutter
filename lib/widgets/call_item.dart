@@ -28,7 +28,7 @@ class CallItem extends StatelessWidget {
                 width: 1,
               ),
               image: DecorationImage(
-                  image: NetworkImage(
+                  image: AssetImage(
                     img,
                   ),
                   fit: BoxFit.cover),

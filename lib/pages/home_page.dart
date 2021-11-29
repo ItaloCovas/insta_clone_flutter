@@ -96,10 +96,7 @@ class _HomePageState extends State<HomePage> {
     } else if (pageIndex == 1) {
       return null;
     } else if (pageIndex == 2) {
-      return AppBar(
-        backgroundColor: const Color(0xFF131313),
-        title: const Text('Nova Publicação'),
-      );
+      return null;
     } else if (pageIndex == 3) {
       return AppBar(
         backgroundColor: const Color(0xFF131313),
@@ -172,6 +169,9 @@ class _HomePageState extends State<HomePage> {
             return InkWell(
                 onTap: () {
                   selectedTab(index);
+                  if(selectedTab(index) == 2) {
+                    getImagefromcamera();
+                  }
                 },
                 child: SvgPicture.asset(
                   bottomItems[index],
