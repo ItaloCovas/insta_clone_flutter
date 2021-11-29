@@ -16,7 +16,7 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 ## Img 1
-<img src="https://files.slack.com/files-pri/T402A7HAB-F02PA0R9333/image.png" alt="Imagem da página inicial">
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/n6kfx2T" data-context="false" ><a href="//imgur.com/a/n6kfx2T"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 ## Imag 2
 
