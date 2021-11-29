@@ -15,6 +15,10 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+## Devops
+- Ítalo Covas 
+- Ana Clara
+
 ## Page Login
 <img src = "login.png" width = 300px  aling = center>
 
@@ -33,4 +37,5 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Page Profile
 <img src = "profile.png" width = 300px aling = center>
-<img src = "home.png" width = 300px aling = center>
+<img src = "profile2.png" width = 300px aling = center>
+<img src = "config.png" width = 300px aling = center>
