@@ -143,24 +143,12 @@ class _HomePageState extends State<HomePage> {
       pageIndex == 1
           ? "assets/images/search_active_icon.svg"
           : "assets/images/search_icon.svg",
-<<<<<<< HEAD
-      pageIndex == 2 
-      ? GestureDetector(
-          onTap: () {
-            {
-              getImagefromcamera();
-            }
-          },
-          child: SvgPicture.asset(
-            pageIndex == 2
+      pageIndex == 2
                 ? "assets/images/upload_active_icon.svg"
                 : "assets/images/upload_icon.svg",
-          )) : null,
-=======
       pageIndex == 2
           ? "assets/images/upload_active_icon.svg"
           : "assets/images/upload_icon.svg",
->>>>>>> parent of bbd522e (camera new post)
       pageIndex == 3
           ? "assets/images/love_active_icon.svg"
           : "assets/images/love_icon.svg",
@@ -184,9 +172,6 @@ class _HomePageState extends State<HomePage> {
             return InkWell(
                 onTap: () {
                   selectedTab(index);
-                  if(selectedTab(index) == 2) {
-                    getImagefromcamera();
-                  }
                 },
                 child: SvgPicture.asset(
                   bottomItems[index],
