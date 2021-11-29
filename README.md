@@ -18,6 +18,7 @@ samples, guidance on mobile development, and a full API reference.
 ## Devops
 - Ítalo Covas 
 - Ana Clara
+- Eduardo Mattos 
 
 ## Page Login
 <img src = "login.png" width = 300px  aling = center>
