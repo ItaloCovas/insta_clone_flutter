@@ -21,23 +21,35 @@ samples, guidance on mobile development, and a full API reference.
 - Eduardo Mattos 
 
 ## Page Login
-<div  style="text-align:center>
+<div  style="float:center>
 <img src = "login.png" width = 300px>
 </div>
 ## Page Home
+<div  style="float:center>
 <img src = "home.png" width = 300px>
-
+</div>
 ## Page Chat
-<img src = "home.png" width = 300px>
+<img src = "chat.png" width = 300px>
 <img src = "call.png" width = 300px>
 
 ## Page Search
+<div  style="float:center>
 <img src = "search.png" width = 300px>
-
+</div>
 ## Page Activity
+<div  style="float:center>
 <img src = "activity.png" width = 300px>
-
+</div>
 ## Page Profile
+<div  style="float:center>
+
 <img src = "profile.png" width = 300px>
+</div>
+<div  style="float:center>
+
 <img src = "profile2.png" width = 300px>
+</div>
+<div  style="float:center>
+
 <img src = "config.png" width = 300px>
+<div>
