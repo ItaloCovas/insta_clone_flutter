@@ -16,7 +16,7 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 ## Tela de Login
-<img src = "login.png" width = 60px>
+<img src = "login.png" width = 100px aling = center>
 
 ## Imag 2
 
