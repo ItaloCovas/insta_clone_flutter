@@ -16,11 +16,21 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 ## Page Login
-<img src = "login.png" width = 300px float = center>
+<img src = "login.png" width = 300px  aling = center>
 
 ## Page Home
-<img src = "home.png" width = 300px float = center>
+<img src = "home.png" width = 300px aling = center>
 
 ## Page Chat
-<img src = "home.png" width = 300px float = center>
-<img src = "call.png" width = 300px float = center>
+<img src = "home.png" width = 300px aling = center>
+<img src = "call.png" width = 300px aling = center>
+
+## Page Search
+<img src = "search.png" width = 300px aling = center>
+
+## Page Activity
+<img src = "activity.png" width = 300px aling = center>
+
+## Page Profile
+<img src = "profile.png" width = 300px aling = center>
+<img src = "home.png" width = 300px aling = center>
