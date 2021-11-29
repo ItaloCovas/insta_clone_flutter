@@ -15,8 +15,8 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-## Img 1
-<img src = "login.png">
+## Tela de Login
+<img src = "login.png" width = 60px>
 
 ## Imag 2
 
