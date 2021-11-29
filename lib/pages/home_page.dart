@@ -142,7 +142,8 @@ class _HomePageState extends State<HomePage> {
       pageIndex == 1
           ? "assets/images/search_active_icon.svg"
           : "assets/images/search_icon.svg",
-      GestureDetector(
+      pageIndex == 2 
+      ? GestureDetector(
           onTap: () {
             {
               getImagefromcamera();
@@ -152,7 +153,7 @@ class _HomePageState extends State<HomePage> {
             pageIndex == 2
                 ? "assets/images/upload_active_icon.svg"
                 : "assets/images/upload_icon.svg",
-          )),
+          )) : null,
       pageIndex == 3
           ? "assets/images/love_active_icon.svg"
           : "assets/images/love_icon.svg",
