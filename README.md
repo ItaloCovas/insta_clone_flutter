@@ -15,9 +15,12 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-## Tela de Login
-<img src = "login.png" width = 100px aling = center>
+## Page Login
+<img src = "login.png" width = 300px float = center>
 
-## Imag 2
+## Page Home
+<img src = "home.png" width = 300px float = center>
 
-## img 3
+## Page Chat
+<img src = "home.png" width = 300px float = center>
+<img src = "call.png" width = 300px float = center>
