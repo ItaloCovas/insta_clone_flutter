@@ -144,9 +144,6 @@ class _HomePageState extends State<HomePage> {
           ? "assets/images/search_active_icon.svg"
           : "assets/images/search_icon.svg",
       pageIndex == 2
-                ? "assets/images/upload_active_icon.svg"
-                : "assets/images/upload_icon.svg",
-      pageIndex == 2
           ? "assets/images/upload_active_icon.svg"
           : "assets/images/upload_icon.svg",
       pageIndex == 3
