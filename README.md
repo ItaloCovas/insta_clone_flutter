@@ -1,4 +1,4 @@
-# insta_clone
+# Insta Clone
 
 A new Flutter project.
 
@@ -14,3 +14,10 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Img 1
+<img src="https://files.slack.com/files-pri/T402A7HAB-F02PA0R9333/image.png" alt="Imagem da página inicial">
+
+## Imag 2
+
+## img 3
