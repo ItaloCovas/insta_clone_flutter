@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:insta_clone/pages/newpost_page.dart';
 
 class CameraDescription {}
 

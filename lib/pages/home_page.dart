@@ -4,7 +4,7 @@ import 'package:insta_clone/pages/activity_page.dart';
 
 import 'package:insta_clone/pages/chat_page.dart';
 import 'package:insta_clone/pages/main_page.dart';
-import 'package:insta_clone/pages/newpost_page.dart';
+
 import 'package:insta_clone/pages/search_page.dart';
 import 'package:insta_clone/theme/colors.dart';
 import 'profile_page.dart';
@@ -51,7 +51,6 @@ class _HomePageState extends State<HomePage> {
     List<Widget> pages = [
       const MainPage(),
       const SearchPage(),
-      NewPost(),
       const ActivityPage(),
       const ProfilePage(),
     ];
@@ -143,9 +142,17 @@ class _HomePageState extends State<HomePage> {
       pageIndex == 1
           ? "assets/images/search_active_icon.svg"
           : "assets/images/search_icon.svg",
-      pageIndex == 2
-          ? "assets/images/upload_active_icon.svg"
-          : "assets/images/upload_icon.svg",
+      GestureDetector(
+          onTap: () {
+            {
+              getImagefromcamera();
+            }
+          },
+          child: SvgPicture.asset(
+            pageIndex == 2
+                ? "assets/images/upload_active_icon.svg"
+                : "assets/images/upload_icon.svg",
+          )),
       pageIndex == 3
           ? "assets/images/love_active_icon.svg"
           : "assets/images/love_icon.svg",
@@ -166,17 +173,7 @@ class _HomePageState extends State<HomePage> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: List.generate(bottomItems.length, (index) {
-            return InkWell(
-                onTap: () {
-                  selectedTab(index);
-                  if(selectedTab(index) == 2) {
-                    getImagefromcamera();
-                  }
-                },
-                child: SvgPicture.asset(
-                  bottomItems[index],
-                  width: 27.0,
-                ));
+            return GestureDetector(onTap: () {});
           }),
         ),
       ),
