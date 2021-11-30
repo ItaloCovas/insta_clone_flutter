@@ -8,6 +8,9 @@ All credits goes to Instagram, we just used their UI (User Interface) for study 
 - Ana Clara (Padawan)
 - Eduardo Mattos (Jedi)
 
+## Video (Click in image)
+[![Youtube Demonstration Video](http://img.youtube.com/vi/tjwSgUC15gY/0.jpg)](http://www.youtube.com/watch?v=tjwSgUC15gY "Flutter Demonstration")
+
 ## Login Page
 
 <img src="/assets/readme/login.png" width="300px">
