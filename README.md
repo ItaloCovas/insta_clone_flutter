@@ -8,27 +8,27 @@ All credits goes to Instagram, we just used their UI (User Interface) for study 
 - Ana Clara (Padawan)
 - Eduardo Mattos (Jedi)
 
-## Page Login
+## Login Page
 
 <img src="/assets/readme/login.png" width="300px">
 
-## Page Home
+## Home Page
 
 <img src="/assets/readme/home.png" width="300px">
 
-## Page Chat
+## Chat Page
 <img src="/assets/readme/chat.png" width="300px">
 <img src="/assets/readme/call.png" width="300px">
 
-## Page Search
+## Search Page
 
 <img src="/assets/readme/search.png" width="300px">
 
-## Page Activity
+## Activity Page
 
 <img src="/assets/readme/activity.png" width="300px">
 
-## Page Profile
+## Profile Page
 
 <img src="/assets/readme/profile.png" width="300px">
 <img src="/assets/readme/profile2.png" width="300px">
