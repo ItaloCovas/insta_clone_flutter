@@ -8,35 +8,27 @@ A new Flutter project.
 - Eduardo Mattos 
 
 ## Page Login
-<div style="margin: 0 auto;">
+
 <img src="login.png">
-</div>
+
 ## Page Home
-<div style="float:center>
-<img src = "home.png" width = 300px>
-</div>
+
+<img src="home.png">
+
 ## Page Chat
-<img src = "chat.png" width = 300px>
-<img src = "call.png" width = 300px>
+<img src="chat.png">
+<img src="call.png">
 
 ## Page Search
-<div  style="float:center>
-<img src = "search.png" width = 300px>
-</div>
+
+<img src="search.png">
+
 ## Page Activity
-<div  style="float:center>
-<img src = "activity.png" width = 300px>
-</div>
+
+<img src="activity.png">
+
 ## Page Profile
-<div  style="float:center>
 
-<img src = "profile.png" width = 300px>
-</div>
-<div  style="float:center>
-
-<img src = "profile2.png" width = 300px>
-</div>
-<div  style="float:center>
-
-<img src = "config.png" width = 300px>
-<div>
+<img src="profile.png">
+<img src = "profile2.png">
+<img src = "config.png">
