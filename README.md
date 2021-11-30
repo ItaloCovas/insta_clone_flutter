@@ -13,22 +13,22 @@ A new Flutter project.
 
 ## Page Home
 
-<img src="home.png">
+<img src="home.png" width="300px">
 
 ## Page Chat
-<img src="chat.png">
-<img src="call.png">
+<img src="chat.png" width="300px">
+<img src="call.png" width="300px">
 
 ## Page Search
 
-<img src="search.png">
+<img src="search.png" width="300px">
 
 ## Page Activity
 
-<img src="activity.png">
+<img src="activity.png" width="300px">
 
 ## Page Profile
 
-<img src="profile.png">
-<img src = "profile2.png">
-<img src = "config.png">
+<img src="profile.png" width="300px">
+<img src = "profile2.png" width="300px">
+<img src = "config.png" width="300px">
