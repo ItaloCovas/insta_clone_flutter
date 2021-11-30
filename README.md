@@ -9,7 +9,7 @@ A new Flutter project.
 
 ## Page Login
 
-<img src="login.png">
+<img src="login.png" width="300px">
 
 ## Page Home
 
