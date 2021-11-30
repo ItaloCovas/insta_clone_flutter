@@ -9,10 +9,10 @@ A new Flutter project.
 
 ## Page Login
 <div style="margin: 0 auto;">
-<img src = "login.png" width = 300px>
+<img src="login.png">
 </div>
 ## Page Home
-<div  style="float:center>
+<div style="float:center>
 <img src = "home.png" width = 300px>
 </div>
 ## Page Chat
