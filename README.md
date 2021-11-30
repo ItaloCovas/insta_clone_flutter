@@ -9,26 +9,26 @@ A new Flutter project.
 
 ## Page Login
 
-<img src="login.png" width="300px">
+<img src="/assets/readme/login.png" width="300px">
 
 ## Page Home
 
-<img src="home.png" width="300px">
+<img src="/assets/readme/home.png" width="300px">
 
 ## Page Chat
-<img src="chat.png" width="300px">
-<img src="call.png" width="300px">
+<img src="/assets/readme/chat.png" width="300px">
+<img src="/assets/readme/call.png" width="300px">
 
 ## Page Search
 
-<img src="search.png" width="300px">
+<img src="/assets/readme/search.png" width="300px">
 
 ## Page Activity
 
-<img src="activity.png" width="300px">
+<img src="/assets/readme/activity.png" width="300px">
 
 ## Page Profile
 
-<img src="profile.png" width="300px">
-<img src = "profile2.png" width="300px">
-<img src = "config.png" width="300px">
+<img src="/assets/readme/profile.png" width="300px">
+<img src="/assets/readme/profile2.png" width="300px">
+<img src="/assets/readme/config.png" width="300px">
