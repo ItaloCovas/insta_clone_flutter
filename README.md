@@ -1,11 +1,12 @@
 # Insta Clone
 
-A new Flutter project.
+A project made to practice our skills in Flutter. We have learned about layouts, positioning, JSON manipulation in Flutter and a bunch of new Widgets.
+All credits goes to Instagram, we just used their UI (User Interface) for study purposes.
 
 ## Contributors
-- Ítalo Covas 
-- Ana Clara
-- Eduardo Mattos 
+- Ítalo Covas (Padawan)
+- Ana Clara (Padawan)
+- Eduardo Mattos (Jedi)
 
 ## Page Login
 
